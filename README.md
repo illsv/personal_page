@@ -18,7 +18,7 @@ hugo --gc --minify            # production build into public/
 | Selected work entries | `content/work/*.md` — one file per project, fields in front matter, ordered by `weight` |
 | Case studies | `content/case-studies/*.md` — Markdown with `## Problem … ## Result` headings; the lowest `weight` is featured on the home page |
 | Blog posts | `content/blog/*.md` — hidden for now via the `cascade` block in `content/blog/_index.md`; remove it and re-add the Blog menu entry in `hugo.toml` to publish |
-| Leadership, principles, services, technology, experience, projects | `data/*.yaml` |
+| Leadership, principles, services, technology, projects | `data/*.yaml` |
 | Site-wide settings (email, links, CV, portrait, OG image) | `hugo.toml` → `[params]` |
 | Styles | `assets/css/main.css` |
 

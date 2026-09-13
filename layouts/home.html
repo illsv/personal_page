@@ -155,34 +155,10 @@
   </div>
 </section>
 
-<section id="experience" class="section wrap rule">
-  <div class="section-grid">
-    <div class="section-head">
-      <p class="mono">08 — Experience</p>
-      <h2>Role → scope → ownership → impact</h2>
-    </div>
-    <div class="section-body">
-      {{ range hugo.Data.experience }}
-      <article class="role">
-        <div class="role-head">
-          <h3>{{ partial "ph.html" .role }}</h3>
-          <p class="mono">{{ partial "ph.html" .company }} · {{ partial "ph.html" .period }}</p>
-        </div>
-        <dl class="fields fields--tight">
-          <div class="field"><dt>Scope</dt><dd>{{ partial "ph.html" .scope }}</dd></div>
-          <div class="field"><dt>Owned</dt><dd>{{ partial "ph.html" .owned }}</dd></div>
-          <div class="field"><dt>Impact</dt><dd>{{ partial "ph.html" .impact }}</dd></div>
-        </dl>
-      </article>
-      {{ end }}
-    </div>
-  </div>
-</section>
-
 <section id="about" class="section wrap rule">
   <div class="section-grid">
     <div class="section-head">
-      <p class="mono">09 — About</p>
+      <p class="mono">08 — About</p>
       <h2>Briefly</h2>
     </div>
     <div class="section-body section-body--narrow about">
@@ -196,7 +172,7 @@
 <section id="projects" class="section section--compact wrap rule">
   <div class="section-grid">
     <div class="section-head">
-      <p class="mono">10 — Independent work</p>
+      <p class="mono">09 — Independent work</p>
       <h2 class="h2--sm">Things I build on my own</h2>
       <p class="small muted">Curiosity, product thinking, and the habit of shipping without a team around.</p>
     </div>
@@ -214,7 +190,7 @@
 <section id="writing" class="section section--compact wrap rule">
   <div class="section-grid">
     <div class="section-head">
-      <p class="mono">11 — Writing</p>
+      <p class="mono">10 — Writing</p>
       <h2 class="h2--sm">Recent notes</h2>
       <a class="textlink" href="/blog/">All posts</a>
     </div>
