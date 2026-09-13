@@ -38,7 +38,7 @@
 /* Dark: same warm family, inverted. Follows the system setting; no toggle, no JS.
    Ink blocks become raised warm-charcoal panels rather than cream slabs. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     color-scheme: dark;
     --paper: #161410;
     --paper-2: #1d1b16;
@@ -59,8 +59,31 @@
     --block-muted: #9a937f;
     --block-dim: #b0a996;
   }
-  .portrait img { filter: grayscale(1) contrast(1.05) brightness(0.88); }
+  :root:not([data-theme="light"]) .portrait img { filter: grayscale(1) contrast(1.05) brightness(0.88); }
 }
+/* The toggle's choice (data-theme on <html>) wins over the system setting. Keep this block identical to the one above. */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #161410;
+    --paper-2: #1d1b16;
+    --paper-3: #2a2720;
+    --portrait-bg: #2a2720;
+    --ink: #ede8dc;
+    --ink-2: #cbc4b5;
+    --muted: #9a937f;
+    --dim: #857d6e;
+    --rule: #322e26;
+    --rule-strong: #4a4438;
+    --rule-soft: #3a352c;
+    --rule-ink: #3d382e;
+    --accent: #d9764f;
+    --on-accent: #161410;
+    --block-bg: #211e18;
+    --block-fg: #ede8dc;
+    --block-muted: #9a937f;
+    --block-dim: #b0a996;
+}
+:root[data-theme="dark"] .portrait img { filter: grayscale(1) contrast(1.05) brightness(0.88); }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -107,8 +130,19 @@ img, svg { max-width: 100%; height: auto; }
 .wordmark { font-family: var(--serif); font-weight: 400; font-size: 22px; }
 .nav ul { display: flex; gap: 32px; }
 .nav a { font-size: 14px; }
-.header-mail { color: var(--ink); }
+.header-actions { display: flex; align-items: center; gap: 8px; }
+.header-mail { color: var(--ink); margin-right: 8px; }
 .menu { display: none; }
+.theme-toggle { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; margin-right: -12px; padding: 0; border: 0; background: transparent; color: var(--ink); cursor: pointer; transition: color 160ms ease; }
+.theme-toggle:hover { color: var(--accent); }
+html.js .theme-toggle { display: inline-flex; }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+.to-top { position: fixed; right: 24px; bottom: 24px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--ink); border-radius: 2px; background: var(--paper); color: var(--ink); opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity 200ms ease, transform 200ms ease, visibility 0s linear 200ms, color 160ms ease, border-color 160ms ease; z-index: 5; }
+.to-top.is-visible { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.to-top:hover { color: var(--accent); border-color: var(--accent); }
+html:not(.js) .to-top { display: none; }
 
 /* Hero */
 .hero { padding-top: 72px; padding-bottom: 96px; }
@@ -296,6 +330,7 @@ img, svg { max-width: 100%; height: auto; }
   .nav { display: none; }
   .header-mail { display: none; }
   .menu { display: block; }
+  .theme-toggle { margin-right: 0; }
 }
 
 /* ---------- Phone: its own composition ---------- */
@@ -377,6 +412,7 @@ img, svg { max-width: 100%; height: auto; }
   .contact-row { flex-direction: column; align-items: flex-start; gap: 24px; }
   .contact-links { gap: 32px; }
   .footer-row { flex-direction: column; gap: 6px; padding-top: 20px; padding-bottom: 24px; }
+  .to-top { right: 16px; bottom: 16px; }
   .page { padding-top: 24px; padding-bottom: 64px; }
   .prose { margin-top: 32px; }
   .prose p, .prose li { font-size: 17px; }

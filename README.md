@@ -1,6 +1,6 @@
 # illsv.com
 
-Personal engineering profile of Illia Losiev. Static site built with [Hugo](https://gohugo.io) — no JavaScript, self-hosted fonts, deployed to GitHub Pages on push to `main`.
+Personal engineering profile of Illia Losiev. Static site built with [Hugo](https://gohugo.io) — no framework, one small script (theme toggle, eased in-page scrolling, back-to-top), self-hosted fonts, deployed to GitHub Pages on push to `main`.
 
 ## Run locally
 
@@ -21,6 +21,7 @@ hugo --gc --minify            # production build into public/
 | Leadership, principles, services, technology | `data/*.yaml` |
 | Site-wide settings (email, links, CV, portrait, OG image) | `hugo.toml` → `[params]` |
 | Styles | `assets/css/main.css` |
+| Script (theme toggle, scrolling, back-to-top) | `assets/js/site.js` |
 
 Anything written in `[square brackets]` renders as a grey placeholder — search for `[` to find what still needs real content.
 

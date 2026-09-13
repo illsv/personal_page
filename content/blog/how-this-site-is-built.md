@@ -2,7 +2,7 @@
 title: "How this site is built"
 date: 2026-09-13
 draft: true
-description: "A static site with a blog, no JavaScript, self-hosted fonts and free hosting — and why."
+description: "A static site with a blog, almost no JavaScript, self-hosted fonts and free hosting — and why."
 tags: ["meta", "hugo"]
 ---
 
