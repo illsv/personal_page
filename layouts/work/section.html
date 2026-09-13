@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="page wrap">
+  <header class="page-head">
+    <p class="mono">Selected work</p>
+    <h1>Systems I have built and owned</h1>
+    <p class="lede">Each entry is a short case study: context, problem, role, decisions, outcome. Technology comes last.</p>
+  </header>
+  <div class="work-list">
+    {{ range .Pages.ByWeight }}{{ partial "work-entry.html" . }}{{ end }}
+  </div>
+</section>
+{{ partial "contact.html" . }}
+{{ end }}

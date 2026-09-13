@@ -1,0 +1,8 @@
+- Understand the problem before designing the solution.
+- Prefer simple architecture until complexity is justified.
+- Make trade-offs explicit.
+- Optimise for maintainability, not cleverness.
+- Treat production behaviour as part of engineering.
+- Build systems other engineers can understand.
+- Technical decisions should serve product goals.
+- Own outcomes, not just implementation.

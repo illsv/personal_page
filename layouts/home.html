@@ -1,0 +1,234 @@
+{{ define "main" }}
+{{- $p := .Params -}}
+
+<section id="top" class="hero wrap">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="mono">{{ $p.hero.kicker }}</p>
+      <h1 class="hero-title">{{ $p.hero.headline }} <em>{{ $p.hero.headlineEm }}</em></h1>
+      <p class="lede hero-lede">{{ $p.hero.lede }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#hire">Work with me</a>
+        <a class="btn btn-ghost" href="#work">View selected work</a>
+        {{ with site.Params.cv }}<a class="textlink" href="{{ . }}">Download CV</a>{{ end }}
+      </div>
+    </div>
+    <div class="hero-aside">
+      <div class="portrait">
+        {{ with site.Params.portrait }}<img src="{{ . }}" alt="Illia Losiev" width="300" height="380" loading="eager" fetchpriority="high">{{ else }}<span class="mono">[Portrait — editorial, monochrome]</span>{{ end }}
+      </div>
+      <p class="mono">fig. 01 — {{ site.Params.author }}</p>
+      <p class="small muted">{{ $p.hero.note }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="strip wrap rule" aria-label="In short">
+  {{ range hugo.Data.strip }}
+  <div><p class="mono">{{ .label }}</p><p class="small">{{ .text }}</p></div>
+  {{ end }}
+</section>
+
+<section id="how" class="section wrap rule">
+  <div class="section-grid">
+    <div class="section-head">
+      <p class="mono">01 — How I work</p>
+      <h2>From problem to outcome</h2>
+    </div>
+    <div class="section-body">
+      <p class="lede">Every engagement follows the same arc. The work is not the code in the middle — it is carrying a difficult problem all the way to a measurable result.</p>
+      <ol class="narrative">
+        {{ range $i, $s := hugo.Data.narrative }}
+        <li{{ if $s.emphasis }} class="is-emphasis"{{ end }}>
+          <span class="narrative-num mono">{{ printf "%02d" (add $i 1) }}</span>
+          <span class="narrative-label">{{ $s.label }}</span>
+          <span class="narrative-text small">{{ $s.text }}</span>
+        </li>
+        {{ end }}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="section wrap rule">
+  <div class="section-grid">
+    <div class="section-head">
+      <p class="mono">02 — Selected work</p>
+      <h2>Systems I have built and owned</h2>
+      <p class="small muted">Each entry is a short case study: context, problem, role, decisions, outcome. Technology comes last.</p>
+    </div>
+    <div class="section-body">
+      {{ range (where site.RegularPages "Section" "work").ByWeight }}{{ partial "work-entry.html" . }}{{ end }}
+    </div>
+  </div>
+</section>
+
+{{ $studies := where site.RegularPages "Section" "case-studies" }}
+{{ with $studies.ByWeight }}
+{{ $featured := index . 0 }}
+<section id="case-studies" class="section wrap rule">
+  <div class="section-grid">
+    <div class="section-head">
+      <p class="mono">03 — Technical case study</p>
+      <h2>{{ $featured.Title }}</h2>
+      {{ with after 1 . }}
+      <div class="more-list">
+        <p class="mono dim">More case studies</p>
+        {{ range . }}<a class="textlink" href="{{ .RelPermalink }}">{{ partial "ph.html" .Title }}</a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+    <div class="section-body case-teaser">
+      <p class="lede">{{ $featured.Params.summary }}</p>
+      <div class="case-teaser-grid">
+        <div><p class="mono">Problem</p><p>{{ $featured.Params.teaserProblem }}</p></div>
+        <div><p class="mono">Decision</p><p>{{ $featured.Params.teaserDecision }}</p></div>
+      </div>
+      <a class="btn btn-ghost" href="{{ $featured.RelPermalink }}">Read the full case study</a>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section id="leadership" class="section wrap rule">
+  <div class="section-grid">
+    <div class="section-head">
+      <p class="mono">04 — Technical leadership</p>
+      <h2>How I lead technical work</h2>
+      <p class="small muted">Leadership shows up in engineering behaviour, not in titles.</p>
+    </div>
+    <div class="section-body lead-grid">
+      {{ range hugo.Data.leadership }}
+      <div class="lead-item"><p class="mono">{{ .title }}</p><p class="serif lead-text">{{ .text }}</p></div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="principles" class="section section--ink">
+  <div class="wrap section-grid">
+    <div class="section-head">
+      <p class="mono">05 — Principles</p>
+      <h2>How I think about engineering</h2>
+    </div>
+    <ol class="section-body principles">
+      {{ range $i, $t := hugo.Data.principles }}
+      <li><span class="mono">{{ printf "%02d" (add $i 1) }}</span><span class="serif principle-text">{{ $t }}</span></li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+
+<section id="hire" class="section wrap">
+  <div class="section-grid">
+    <div class="section-head">
+      <p class="mono">06 — Work with me</p>
+      <h2>Have a difficult technical problem?</h2>
+    </div>
+    <div class="section-body">
+      <p class="lede hire-lede">I work with teams and founders who need senior technical ownership — from architecture and backend systems to technical rescue and product delivery.</p>
+      <div class="services">
+        {{ range $i, $s := hugo.Data.services }}
+        <div class="service"><p class="mono">{{ printf "%02d" (add $i 1) }}</p><h3>{{ $s.title }}</h3><p class="small">{{ $s.text }}</p></div>
+        {{ end }}
+      </div>
+      <div class="hire-cta">
+        <a class="btn btn-primary" href="mailto:{{ site.Params.email }}">Let's talk</a>
+        <p class="small muted">{{ site.Params.email }} — a short description of the problem is enough to start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="technology" class="section section--compact wrap rule">
+  <div class="section-grid">
+    <div class="section-head">
+      <p class="mono">07 — Tools</p>
+      <h2 class="h2--sm">Technology</h2>
+      <p class="small muted">Supporting evidence, not identity.</p>
+    </div>
+    <dl class="section-body section-body--narrow tech">
+      {{ range hugo.Data.technology }}
+      <div class="tech-row"><dt>{{ .group }}</dt><dd>{{ .items }}</dd></div>
+      {{ end }}
+    </dl>
+  </div>
+</section>
+
+<section id="experience" class="section wrap rule">
+  <div class="section-grid">
+    <div class="section-head">
+      <p class="mono">08 — Experience</p>
+      <h2>Role → scope → ownership → impact</h2>
+    </div>
+    <div class="section-body">
+      {{ range hugo.Data.experience }}
+      <article class="role">
+        <div class="role-head">
+          <h3>{{ partial "ph.html" .role }}</h3>
+          <p class="mono">{{ partial "ph.html" .company }} · {{ partial "ph.html" .period }}</p>
+        </div>
+        <dl class="fields fields--tight">
+          <div class="field"><dt>Scope</dt><dd>{{ partial "ph.html" .scope }}</dd></div>
+          <div class="field"><dt>Owned</dt><dd>{{ partial "ph.html" .owned }}</dd></div>
+          <div class="field"><dt>Impact</dt><dd>{{ partial "ph.html" .impact }}</dd></div>
+        </dl>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section wrap rule">
+  <div class="section-grid">
+    <div class="section-head">
+      <p class="mono">09 — About</p>
+      <h2>Briefly</h2>
+    </div>
+    <div class="section-body section-body--narrow about">
+      <p class="lede">{{ $p.about.lede }}</p>
+      {{ range $p.about.paragraphs }}<p>{{ . }}</p>{{ end }}
+      <p class="muted">{{ partial "ph.html" $p.about.personal }}</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section section--compact wrap rule">
+  <div class="section-grid">
+    <div class="section-head">
+      <p class="mono">10 — Independent work</p>
+      <h2 class="h2--sm">Things I build on my own</h2>
+      <p class="small muted">Curiosity, product thinking, and the habit of shipping without a team around.</p>
+    </div>
+    <div class="section-body cards">
+      {{ range hugo.Data.projects }}
+      {{ if .url }}<a class="card" href="{{ .url }}">{{ else }}<div class="card">{{ end }}
+        <p class="mono">{{ .kind }}</p><h3>{{ partial "ph.html" .title }}</h3><p class="small">{{ partial "ph.html" .text }}</p>
+      {{ if .url }}</a>{{ else }}</div>{{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ with (where site.RegularPages "Section" "blog") }}
+<section id="writing" class="section section--compact wrap rule">
+  <div class="section-grid">
+    <div class="section-head">
+      <p class="mono">11 — Writing</p>
+      <h2 class="h2--sm">Recent notes</h2>
+      <a class="textlink" href="/blog/">All posts</a>
+    </div>
+    <div class="section-body posts">
+      {{ range first 3 . }}
+      <a class="post-row" href="{{ .RelPermalink }}">
+        <span class="mono">{{ .Date.Format "Jan 2, 2006" }}</span>
+        <span class="serif post-title">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ partial "contact.html" . }}
+{{ end }}

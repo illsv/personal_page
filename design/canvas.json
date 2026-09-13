@@ -1,0 +1,12 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 11200, "title": "illsv.com — desktop" },
+    { "file": "Mobile.dc.html", "x": 1540, "y": 0, "w": 390, "h": 4600, "title": "illsv.com — iPhone" },
+    { "file": "DirectionB.dc.html", "x": 2040, "y": 0, "w": 720, "h": 560, "title": "Direction B — Ink monograph (low-fi)" },
+    { "file": "DirectionC.dc.html", "x": 2040, "y": 720, "w": 720, "h": 560, "title": "Direction C — Swiss technical (low-fi)" }
+  ],
+  "annotations": [
+    { "id": "brief-note", "x": 2040, "y": 1420, "w": 720, "text": "Main direction: warm editorial — Instrument Serif + IBM Plex Sans/Mono, paper ground, ink, one oxide accent (tweakable).\n\nGrey [bracketed] text marks facts I did not have: company names, dates, metrics, projects 2–3, case studies 2–3, roles 2–3, personal projects. The AI Agent Platform story is drafted from the brief; results are placeholders.\n\nB and C are low-fi alternates for the hero only — pick one or keep Main." }
+  ],
+  "launch": { "view": "canvas" }
+}

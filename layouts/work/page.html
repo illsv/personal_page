@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="page wrap">
+  <header class="page-head">
+    <p class="mono"><a href="/work/">Selected work</a></p>
+  </header>
+  <div class="work-list">{{ partial "work-entry.html" . }}</div>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+</section>
+{{ partial "contact.html" . }}
+{{ end }}

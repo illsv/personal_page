@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400&display=swap">
+  <style>
+    body { margin: 0; background: #14130f; color: #ece7db; font-family: "IBM Plex Mono", Menlo, monospace; }
+    a { color: #ece7db; text-decoration: none; } a:hover { color: #c9b98a; }
+    .serif { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; margin: 0; }
+    p { margin: 0; }
+    .mono { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8471; }
+  </style>
+</helmet>
+<div style="width: 720px; height: 560px; box-sizing: border-box; background: #14130f; padding: 32px 36px; display: flex; flex-direction: column; justify-content: space-between;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <span class="mono" style="color: #ece7db;">Illia Losiev</span>
+    <span class="mono">Work · Leadership · Contact</span>
+  </div>
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 32px; align-items: end;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <p class="serif" style="font-size: 64px; line-height: 0.95; color: #ece7db;">Ownership of technical problems, <em>end to end.</em></p>
+      <p style="font-size: 12px; line-height: 1.6; color: #8a8471; max-width: 320px;">Technical lead &amp; software engineer. Backend systems, architecture, delivery.</p>
+      <div style="display: flex; gap: 12px;">
+        <span style="border: 1px solid #ece7db; padding: 10px 16px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;">Work with me</span>
+        <span style="border-bottom: 1px solid #8a8471; padding: 10px 0; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8471;">Selected work</span>
+      </div>
+    </div>
+    <div style="width: 220px; height: 300px; background: #2a2820; display: flex; align-items: flex-end; padding: 10px; box-sizing: border-box;"><span class="mono">[Portrait — full bleed, monochrome]</span></div>
+  </div>
+  <div style="border-top: 1px solid #2f2d25; padding-top: 12px; display: flex; flex-direction: column; gap: 4px;">
+    <p class="mono" style="color: #c9b98a;">Direction B — Ink monograph</p>
+    <p style="font-size: 12px; line-height: 1.55; color: #8a8471;">Dark, sparse, portrait-led. Motivation: reads as a personal monograph, unmistakably not a template. Trade-off: long case-study reading on dark ground tires the eye; diagrams need a second palette.</p>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

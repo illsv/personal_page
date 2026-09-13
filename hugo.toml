@@ -1,0 +1,62 @@
+baseURL = "https://illsv.com/"
+locale = "en-US"
+title = "Illia Losiev — Technical Lead & Software Engineer"
+enableRobotsTXT = true
+enableGitInfo = false
+timeZone = "Europe/Kyiv"
+
+[params]
+  author = "Illia Losiev"
+  description = "Technical Lead and Senior Software Engineer focused on backend systems, architecture and technical ownership. I take ownership of technical problems, from architecture to production."
+  email = "hello@illsv.com"
+  github = "https://github.com/illsv"
+  githubHandle = "@illsv"
+  linkedin = "https://linkedin.com/in/illia-losiev"
+  # Set to a path under static/ (e.g. "/cv.pdf") to show the "Download CV" link.
+  cv = ""
+  # Set to a path under static/ (e.g. "/portrait.jpg") to show the hero portrait.
+  portrait = "/portrait.jpg"
+  # Set to a path under static/ (e.g. "/og.png") for social previews (1200×630).
+  ogImage = ""
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[permalinks]
+  blog = "/blog/:slug/"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    noClasses = false
+    lineNos = false
+
+[minify]
+  minifyOutput = true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+
+[menus]
+  [[menus.main]]
+    name = "Selected work"
+    url = "/#work"
+    weight = 10
+  [[menus.main]]
+    name = "Case studies"
+    url = "/case-studies/"
+    weight = 20
+  [[menus.main]]
+    name = "Leadership"
+    url = "/#leadership"
+    weight = 30
+  [[menus.main]]
+    name = "Work with me"
+    url = "/#hire"
+    weight = 50
+
+
+[taxonomies]

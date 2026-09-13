@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="page wrap">
+  <header class="page-head">
+    <p class="mono">{{ .Title }}</p>
+    <h1>{{ .Params.headline | default .Title }}</h1>
+    {{ with .Params.description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  <div class="posts posts--list">
+    {{ range .Pages }}
+    <a class="post-row" href="{{ .RelPermalink }}">
+      <span class="mono">{{ .Date.Format "Jan 2, 2006" }}</span>
+      <span class="post-main"><span class="serif post-title">{{ partial "ph.html" .Title }}</span>{{ with .Params.summary | default .Params.description }}<span class="small muted">{{ partial "ph.html" . }}</span>{{ end }}</span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ partial "contact.html" . }}
+{{ end }}

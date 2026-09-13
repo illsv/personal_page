@@ -1,0 +1,539 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; background: #f4f1ea; color: #17150f; font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: #17150f; text-decoration: none; }
+    a:hover { color: var(--accent, #b3512e); }
+    h1, h2, h3, .serif { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; letter-spacing: -0.01em; }
+    p { margin: 0; text-wrap: pretty; }
+    .mono { font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b665c; line-height: 1.5; }
+    .wrap { max-width: 1248px; margin: 0 auto; padding: 0 96px; }
+    .grid12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; }
+    .rule { border-top: 1px solid #d8d2c5; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 26px; font-size: 15px; font-weight: 500; letter-spacing: 0.01em; border-radius: 2px; transition: background 160ms ease, color 160ms ease, border-color 160ms ease; }
+    .btn-primary { background: #17150f; color: #f4f1ea; border: 1px solid #17150f; }
+    .btn-primary:hover { background: var(--accent, #b3512e); border-color: var(--accent, #b3512e); color: #f4f1ea; }
+    .btn-ghost { background: transparent; color: #17150f; border: 1px solid #17150f; }
+    .btn-ghost:hover { border-color: var(--accent, #b3512e); color: var(--accent, #b3512e); }
+    .nav a { font-size: 14px; color: #17150f; }
+    .nav a:hover { color: var(--accent, #b3512e); }
+    .field { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; padding: 18px 0; border-top: 1px solid #d8d2c5; }
+    .field-label { font-family: "IBM Plex Mono", Menlo, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b665c; padding-top: 4px; }
+    .muted { color: #6b665c; }
+    .lede { font-size: 22px; line-height: 1.5; color: #3a372f; }
+    .work-entry { padding: 56px 0; border-top: 1px solid #d8d2c5; }
+    .work-entry:hover .work-title { color: var(--accent, #b3512e); }
+    .work-title { transition: color 160ms ease; }
+    .lead-item { padding: 28px 0 28px 0; border-top: 1px solid #d8d2c5; }
+    .principle { display: flex; gap: 24px; align-items: baseline; padding: 20px 0; border-top: 1px solid #d8d2c5; }
+    .service { padding: 28px 28px 32px 28px; border: 1px solid #d8d2c5; background: #f9f7f2; min-height: 200px; display: flex; flex-direction: column; gap: 12px; transition: border-color 160ms ease, transform 160ms ease; }
+    .service:hover { border-color: #17150f; }
+    .ph { color: #8c8578; background: #ece8df; padding: 0 4px; border-radius: 2px; }
+    .tech-row { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 24px; padding: 14px 0; border-top: 1px solid #d8d2c5; font-size: 15px; }
+    .role { padding: 40px 0; border-top: 1px solid #d8d2c5; display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 40px; }
+    .card { border: 1px solid #d8d2c5; padding: 24px; background: #f9f7f2; display: flex; flex-direction: column; gap: 10px; }
+    .card:hover { border-color: #17150f; }
+    .diagram text { font-family: "IBM Plex Mono", Menlo, monospace; }
+  </style>
+</helmet>
+
+<div style="--accent: {{accent}}; background: #f4f1ea; min-height: 100%; width: 1440px; box-sizing: border-box;">
+
+  <!-- NAV -->
+  <header class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 88px;">
+    <a href="#top" class="serif" style="font-size: 22px; letter-spacing: 0;">Illia Losiev</a>
+    <nav class="nav" style="display: flex; gap: 32px; align-items: center;">
+      <a href="#work">Selected work</a>
+      <a href="#case">Case study</a>
+      <a href="#lead">Leadership</a>
+      <a href="#hire">Work with me</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="mailto:hello@illsv.com" class="mono" style="color: #17150f;">hello@illsv.com</a>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="wrap" style="padding: 72px 96px 96px 96px;">
+    <div class="grid12" style="align-items: end;">
+      <div style="grid-column: span 8; display: flex; flex-direction: column; gap: 32px;">
+        <p class="mono">Technical Lead &amp; Software Engineer — Backend systems · Architecture · Technical ownership</p>
+        <h1 style="font-size: 92px; line-height: 0.98;">I take ownership of technical problems, <em style="font-style: italic;">from architecture to production.</em></h1>
+        <p class="lede" style="max-width: 640px;">I design and build reliable software systems, lead technical decisions, and turn complex product problems into working products.</p>
+        <div style="display: flex; gap: 14px; align-items: center; padding-top: 8px;">
+          <a href="#hire" class="btn btn-primary" style="background: {{accent}}; border-color: {{accent}};">Work with me</a>
+          <a href="#work" class="btn btn-ghost">View selected work</a>
+          <a href="#cv" style="font-size: 14px; margin-left: 12px; border-bottom: 1px solid #b8b1a3; padding-bottom: 2px;">Download CV</a>
+        </div>
+      </div>
+      <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 16px; align-items: flex-end;">
+        <div style="width: 300px; height: 380px; background: #dcd6c8; position: relative; clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%); display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box;">
+          <span class="mono" style="color: #6b665c;">[Portrait — editorial, monochrome]</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px; width: 300px;">
+          <p class="mono">fig. 01 — Illia Losiev</p>
+          <p style="font-size: 14px; color: #6b665c;">Open to Senior, Lead and Staff roles, and to selected consulting work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10-SECOND STRIP -->
+  <section class="wrap rule" style="padding: 40px 96px 56px 96px;">
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <p class="mono">Who</p>
+        <p style="font-size: 16px;">An experienced software engineer with a decade-scale background in backend systems.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <p class="mono">What</p>
+        <p style="font-size: 16px;">Backend systems, architecture, and technical leadership for product teams.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <p class="mono">How</p>
+        <p style="font-size: 16px;">Owns problems end-to-end: understanding, decision, implementation, operation.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <p class="mono">Why it matters</p>
+        <p style="font-size: 16px;">Turns ambiguous requirements into reliable software running in production.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 NARRATIVE -->
+  <section class="wrap rule" style="padding: 96px 96px 96px 96px;">
+    <div class="grid12">
+      <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 12px;">
+        <p class="mono">01 — How I work</p>
+        <h2 style="font-size: 40px; line-height: 1.05;">From problem to outcome</h2>
+      </div>
+      <div style="grid-column: span 9; display: flex; flex-direction: column; gap: 40px;">
+        <p class="lede">Every engagement follows the same arc. The work is not the code in the middle — it is carrying a difficult problem all the way to a measurable result.</p>
+        <svg class="diagram" viewBox="0 0 900 190" width="100%" style="display: block; overflow: visible;" role="img" aria-label="Problem, Understanding, Decision, Ownership, Production, Outcome">
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#17150f"></path>
+            </marker>
+          </defs>
+          <line x1="40" y1="40" x2="860" y2="40" stroke="#c9c2b3" stroke-width="1"></line>
+          <g>
+            <circle cx="40" cy="40" r="18" fill="#f4f1ea" stroke="#17150f" stroke-width="1.25"></circle>
+            <text x="40" y="44" text-anchor="middle" font-size="11" fill="#17150f">01</text>
+            <text x="40" y="92" text-anchor="middle" font-size="12" letter-spacing="1" fill="#17150f">PROBLEM</text>
+            <text x="40" y="116" text-anchor="middle" font-size="11" fill="#6b665c">a hard technical</text>
+            <text x="40" y="132" text-anchor="middle" font-size="11" fill="#6b665c">problem exists</text>
+          </g>
+          <g>
+            <circle cx="204" cy="40" r="18" fill="#f4f1ea" stroke="#17150f" stroke-width="1.25"></circle>
+            <text x="204" y="44" text-anchor="middle" font-size="11" fill="#17150f">02</text>
+            <text x="204" y="92" text-anchor="middle" font-size="12" letter-spacing="1" fill="#17150f">UNDERSTANDING</text>
+            <text x="204" y="116" text-anchor="middle" font-size="11" fill="#6b665c">product and</text>
+            <text x="204" y="132" text-anchor="middle" font-size="11" fill="#6b665c">technical constraints</text>
+          </g>
+          <g>
+            <circle cx="368" cy="40" r="18" fill="#f4f1ea" stroke="#17150f" stroke-width="1.25"></circle>
+            <text x="368" y="44" text-anchor="middle" font-size="11" fill="#17150f">03</text>
+            <text x="368" y="92" text-anchor="middle" font-size="12" letter-spacing="1" fill="#17150f">DECISION</text>
+            <text x="368" y="116" text-anchor="middle" font-size="11" fill="#6b665c">options weighed,</text>
+            <text x="368" y="132" text-anchor="middle" font-size="11" fill="#6b665c">trade-offs made explicit</text>
+          </g>
+          <g>
+            <circle cx="532" cy="40" r="18" fill="#17150f" stroke="#17150f" stroke-width="1.25"></circle>
+            <text x="532" y="44" text-anchor="middle" font-size="11" fill="#f4f1ea">04</text>
+            <text x="532" y="92" text-anchor="middle" font-size="12" letter-spacing="1" fill="#17150f">OWNERSHIP</text>
+            <text x="532" y="116" text-anchor="middle" font-size="11" fill="#6b665c">drives implementation</text>
+            <text x="532" y="132" text-anchor="middle" font-size="11" fill="#6b665c">through the hard parts</text>
+          </g>
+          <g>
+            <circle cx="696" cy="40" r="18" fill="#f4f1ea" stroke="#17150f" stroke-width="1.25"></circle>
+            <text x="696" y="44" text-anchor="middle" font-size="11" fill="#17150f">05</text>
+            <text x="696" y="92" text-anchor="middle" font-size="12" letter-spacing="1" fill="#17150f">PRODUCTION</text>
+            <text x="696" y="116" text-anchor="middle" font-size="11" fill="#6b665c">shipped, observed,</text>
+            <text x="696" y="132" text-anchor="middle" font-size="11" fill="#6b665c">operated for real</text>
+          </g>
+          <g>
+            <circle cx="860" cy="40" r="18" fill="#f4f1ea" stroke="#17150f" stroke-width="1.25"></circle>
+            <text x="860" y="44" text-anchor="middle" font-size="11" fill="#17150f">06</text>
+            <text x="860" y="92" text-anchor="middle" font-size="12" letter-spacing="1" fill="#17150f">OUTCOME</text>
+            <text x="860" y="116" text-anchor="middle" font-size="11" fill="#6b665c">a measurable change</text>
+            <text x="860" y="132" text-anchor="middle" font-size="11" fill="#6b665c">for product and team</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 SELECTED WORK -->
+  <section id="work" class="wrap rule" style="padding: 96px 96px 40px 96px;">
+    <div class="grid12">
+      <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 12px;">
+        <p class="mono">02 — Selected work</p>
+        <h2 style="font-size: 40px; line-height: 1.05;">Systems I have built and owned</h2>
+        <p style="font-size: 14px; color: #6b665c; padding-top: 8px;">Each entry is a short case study: context, problem, role, decisions, outcome. Technology comes last.</p>
+      </div>
+      <div style="grid-column: span 9;">
+
+        <article class="work-entry" style="display: flex; flex-direction: column; gap: 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px;">
+            <h3 class="work-title" style="font-size: 34px;">AI Agent Platform</h3>
+            <span class="mono">[Company] · [Year–Year]</span>
+          </div>
+          <p class="lede" style="font-size: 20px;">Built and evolved core parts of an AI agent platform designed to automate customer-facing workflows — the orchestration, integration and background-processing layer that makes agent runs dependable.</p>
+          <div style="display: flex; flex-direction: column;">
+            <div class="field"><span class="field-label">Context</span><p>A product where AI agents complete multi-step customer workflows across email, CRM and internal tools. Correctness and reliability mattered more than raw model capability.</p></div>
+            <div class="field"><span class="field-label">Problem</span><p>Agent runs were long-lived, non-deterministic and dependent on third-party systems that fail. Early implementations lost state on errors, duplicated side effects on retry, and were nearly impossible to debug after the fact.</p></div>
+            <div class="field"><span class="field-label">Role</span><p>Owned the orchestration and integration layer end-to-end: architecture, implementation, rollout and operation in production.</p></div>
+            <div class="field"><span class="field-label">Decisions</span><p>Modelled each run as a durable state machine persisted in PostgreSQL instead of an in-memory chain. Isolated every external call behind an idempotent, retryable job. Kept the LLM boundary thin so it could be tested and swapped without touching workflow logic.</p></div>
+            <div class="field"><span class="field-label">Engineering</span><p>Background processing on Sidekiq with per-tenant queues and backpressure; Redis for rate limiting and short-lived coordination; an append-only event log per run for replay and debugging; structured tracing across every step.</p></div>
+            <div class="field"><span class="field-label">Outcome</span><p><span class="ph">[Metric — e.g. share of runs completing without manual intervention, before → after]</span> and a platform other engineers could extend with new workflow types without touching the core.</p></div>
+          </div>
+          <p class="mono" style="color: #8c8578;">Ruby · Rails · PostgreSQL · Redis · Sidekiq · AI</p>
+        </article>
+
+        <article class="work-entry" style="display: flex; flex-direction: column; gap: 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px;">
+            <h3 class="work-title" style="font-size: 34px;"><span class="ph">[Project 2 — name]</span></h3>
+            <span class="mono">[Company] · [Year–Year]</span>
+          </div>
+          <p class="lede" style="font-size: 20px;"><span class="ph">[One sentence: what was built and why it mattered to the business.]</span></p>
+          <div style="display: flex; flex-direction: column;">
+            <div class="field"><span class="field-label">Context</span><p><span class="ph">[What the product or business was.]</span></p></div>
+            <div class="field"><span class="field-label">Problem</span><p><span class="ph">[What was difficult — scale, correctness, integration, legacy constraints.]</span></p></div>
+            <div class="field"><span class="field-label">Role</span><p><span class="ph">[What you personally owned.]</span></p></div>
+            <div class="field"><span class="field-label">Decisions</span><p><span class="ph">[The two or three technical decisions that shaped the result.]</span></p></div>
+            <div class="field"><span class="field-label">Outcome</span><p><span class="ph">[What changed — a number, a capability, a risk removed.]</span></p></div>
+          </div>
+          <p class="mono" style="color: #8c8578;">[Technologies · at the end]</p>
+        </article>
+
+        <article class="work-entry" style="display: flex; flex-direction: column; gap: 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px;">
+            <h3 class="work-title" style="font-size: 34px;"><span class="ph">[Project 3 — name]</span></h3>
+            <span class="mono">[Company] · [Year–Year]</span>
+          </div>
+          <p class="lede" style="font-size: 20px;"><span class="ph">[One sentence: what was built and why it mattered to the business.]</span></p>
+          <div style="display: flex; flex-direction: column;">
+            <div class="field"><span class="field-label">Context</span><p><span class="ph">[What the product or business was.]</span></p></div>
+            <div class="field"><span class="field-label">Problem</span><p><span class="ph">[What was difficult.]</span></p></div>
+            <div class="field"><span class="field-label">Role</span><p><span class="ph">[What you personally owned.]</span></p></div>
+            <div class="field"><span class="field-label">Decisions</span><p><span class="ph">[Key technical decisions.]</span></p></div>
+            <div class="field"><span class="field-label">Outcome</span><p><span class="ph">[What changed.]</span></p></div>
+          </div>
+          <p class="mono" style="color: #8c8578;">[Technologies · at the end]</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 CASE STUDY -->
+  <section id="case" class="wrap rule" style="padding: 96px 96px 96px 96px;">
+    <div class="grid12">
+      <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 12px;">
+        <p class="mono">03 — Technical case study</p>
+        <h2 style="font-size: 40px; line-height: 1.05;">Making agent runs survive real-world failure</h2>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 16px;">
+          <p class="mono" style="color: #8c8578;">More case studies</p>
+          <a href="#case" style="font-size: 14px; border-bottom: 1px solid #b8b1a3; align-self: flex-start;"><span class="ph">[Case study 2 — title]</span></a>
+          <a href="#case" style="font-size: 14px; border-bottom: 1px solid #b8b1a3; align-self: flex-start;"><span class="ph">[Case study 3 — title]</span></a>
+        </div>
+      </div>
+      <div style="grid-column: span 9; display: flex; flex-direction: column; gap: 48px;">
+
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <p class="mono">Problem</p>
+            <p>A customer-facing workflow is a sequence of steps — read a request, look up records, call an LLM, write to a CRM, send an email. Any step can fail, time out, or return something unexpected. The product needed every run either to finish correctly or to stop in a state a human could understand and resume.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <p class="mono">Constraints</p>
+            <p>A small team, an existing Rails codebase, third-party APIs with rate limits and partial outages, LLM calls that are slow and non-deterministic, and strict expectations that a side effect (an email, a CRM update) never happens twice.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <p class="mono">Options considered</p>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: 1px solid #d8d2c5;">
+            <div style="padding: 24px; border-right: 1px solid #d8d2c5; display: flex; flex-direction: column; gap: 10px;">
+              <p class="mono" style="color: #17150f;">A — In-process chains</p>
+              <p style="font-size: 15px;">Run each workflow as a single long job. Simple to write; state lives in memory, so a crash or timeout loses the run and retries repeat side effects.</p>
+            </div>
+            <div style="padding: 24px; border-right: 1px solid #d8d2c5; display: flex; flex-direction: column; gap: 10px;">
+              <p class="mono" style="color: #17150f;">B — Workflow engine</p>
+              <p style="font-size: 15px;">Adopt a dedicated durable-execution engine. Strong guarantees, but a new runtime to operate and a large conceptual jump for a small team on a tight timeline.</p>
+            </div>
+            <div style="padding: 24px; background: #17150f; color: #f4f1ea; display: flex; flex-direction: column; gap: 10px;">
+              <p class="mono" style="color: #f4f1ea;">C — Durable state machine · chosen</p>
+              <p style="font-size: 15px;">Persist run state and an event log in PostgreSQL; execute each step as an idempotent Sidekiq job. Uses the stack the team already operates and gives most of B's guarantees.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <p class="mono">Decision</p>
+            <p>Option C. The guarantees the product needed — durability, safe retries, resumability — come from data-model discipline, not from a new runtime. Keeping to PostgreSQL and Sidekiq meant one fewer system to operate and every engineer could reason about a run by reading a table.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <p class="mono">Trade-offs</p>
+            <p>Deliberately gave up the built-in tooling of a workflow engine (visual timelines, versioned workflow code) and accepted writing our own step-scheduling and timeout logic. Throughput ceilings of a single Postgres write path were accepted as acceptable for the product's scale.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <p class="mono">Implementation</p>
+          <svg class="diagram" viewBox="0 0 860 300" width="100%" style="display: block; border: 1px solid #d8d2c5; background: #f9f7f2;" role="img" aria-label="Architecture: API, run orchestrator, job queue, step workers, external systems, PostgreSQL state and event log">
+            <defs>
+              <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#17150f"></path>
+              </marker>
+            </defs>
+            <rect x="40" y="60" width="150" height="64" fill="#f4f1ea" stroke="#17150f" stroke-width="1.25"></rect>
+            <text x="115" y="88" text-anchor="middle" font-size="12" fill="#17150f">Web / API</text>
+            <text x="115" y="106" text-anchor="middle" font-size="10" fill="#6b665c">Rails</text>
+            <rect x="250" y="60" width="180" height="64" fill="#17150f" stroke="#17150f" stroke-width="1.25"></rect>
+            <text x="340" y="88" text-anchor="middle" font-size="12" fill="#f4f1ea">Run orchestrator</text>
+            <text x="340" y="106" text-anchor="middle" font-size="10" fill="#cfc8b8">durable state machine</text>
+            <rect x="490" y="60" width="150" height="64" fill="#f4f1ea" stroke="#17150f" stroke-width="1.25"></rect>
+            <text x="565" y="88" text-anchor="middle" font-size="12" fill="#17150f">Step workers</text>
+            <text x="565" y="106" text-anchor="middle" font-size="10" fill="#6b665c">Sidekiq · idempotent jobs</text>
+            <rect x="690" y="40" width="140" height="104" fill="#f4f1ea" stroke="#17150f" stroke-width="1.25" stroke-dasharray="4 3"></rect>
+            <text x="760" y="66" text-anchor="middle" font-size="12" fill="#17150f">External</text>
+            <text x="760" y="86" text-anchor="middle" font-size="10" fill="#6b665c">LLM provider</text>
+            <text x="760" y="102" text-anchor="middle" font-size="10" fill="#6b665c">CRM · email</text>
+            <text x="760" y="118" text-anchor="middle" font-size="10" fill="#6b665c">internal tools</text>
+            <rect x="250" y="200" width="180" height="64" fill="#f4f1ea" stroke="#17150f" stroke-width="1.25"></rect>
+            <text x="340" y="228" text-anchor="middle" font-size="12" fill="#17150f">PostgreSQL</text>
+            <text x="340" y="246" text-anchor="middle" font-size="10" fill="#6b665c">run state + event log</text>
+            <rect x="490" y="200" width="150" height="64" fill="#f4f1ea" stroke="#17150f" stroke-width="1.25"></rect>
+            <text x="565" y="228" text-anchor="middle" font-size="12" fill="#17150f">Redis</text>
+            <text x="565" y="246" text-anchor="middle" font-size="10" fill="#6b665c">rate limits · queues</text>
+            <line x1="190" y1="92" x2="248" y2="92" stroke="#17150f" stroke-width="1.25" marker-end="url(#arr2)"></line>
+            <line x1="430" y1="92" x2="488" y2="92" stroke="#17150f" stroke-width="1.25" marker-end="url(#arr2)"></line>
+            <line x1="640" y1="92" x2="688" y2="92" stroke="#17150f" stroke-width="1.25" marker-end="url(#arr2)"></line>
+            <line x1="340" y1="124" x2="340" y2="198" stroke="#17150f" stroke-width="1.25" marker-end="url(#arr2)" marker-start="url(#arr2)"></line>
+            <line x1="565" y1="124" x2="565" y2="198" stroke="#17150f" stroke-width="1.25" marker-end="url(#arr2)" marker-start="url(#arr2)"></line>
+            <path d="M 565 124 L 565 160 L 340 160" stroke="#c9c2b3" stroke-width="1" fill="none" stroke-dasharray="3 3"></path>
+            <text x="452" y="154" text-anchor="middle" font-size="10" fill="#6b665c">step result → next transition</text>
+            <text x="40" y="284" font-size="10" fill="#6b665c" letter-spacing="1">FIG. 02 — EVERY STEP IS RECORDED BEFORE ITS SIDE EFFECT RUNS; RETRIES READ THE LOG FIRST.</text>
+          </svg>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; padding-top: 8px;">
+            <p style="font-size: 15px;"><strong style="font-weight: 600;">Idempotency keys</strong> on every external call, stored with the step, so a retried job can detect a completed side effect and skip it.</p>
+            <p style="font-size: 15px;"><strong style="font-weight: 600;">Per-tenant queues</strong> with backpressure so one noisy customer cannot starve the rest; Redis-backed rate limits per external provider.</p>
+            <p style="font-size: 15px;"><strong style="font-weight: 600;">Replayable event log</strong> per run, which became the debugging tool for support and the basis for resuming a stalled run by hand.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; padding: 32px; border: 1px solid #17150f;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <p class="mono">Result</p>
+            <p><span class="ph">[Metric — e.g. runs completing unattended: X% → Y%; duplicate side effects: N → 0; median time to diagnose a failed run]</span></p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <p class="mono">What it changed for the team</p>
+            <p>New workflow types became a matter of defining steps, not re-solving reliability. Support could read a run's log instead of paging an engineer.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 LEADERSHIP -->
+  <section id="lead" class="wrap rule" style="padding: 96px 96px 96px 96px;">
+    <div class="grid12">
+      <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 12px;">
+        <p class="mono">04 — Technical leadership</p>
+        <h2 style="font-size: 40px; line-height: 1.05;">How I lead technical work</h2>
+        <p style="font-size: 14px; color: #6b665c; padding-top: 8px;">Leadership shows up in engineering behaviour, not in titles.</p>
+      </div>
+      <div style="grid-column: span 9; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px;">
+        <div class="lead-item" style="display: flex; flex-direction: column; gap: 8px;"><p class="mono">Architecture</p><p class="serif" style="font-size: 24px; line-height: 1.25;">Design systems that can evolve without unnecessary complexity.</p></div>
+        <div class="lead-item" style="display: flex; flex-direction: column; gap: 8px;"><p class="mono">Technical decisions</p><p class="serif" style="font-size: 24px; line-height: 1.25;">Choose technologies and approaches based on constraints, not hype.</p></div>
+        <div class="lead-item" style="display: flex; flex-direction: column; gap: 8px;"><p class="mono">Ownership</p><p class="serif" style="font-size: 24px; line-height: 1.25;">Take responsibility for outcomes rather than just assigned tickets.</p></div>
+        <div class="lead-item" style="display: flex; flex-direction: column; gap: 8px;"><p class="mono">Delivery</p><p class="serif" style="font-size: 24px; line-height: 1.25;">Break complex technical problems into incremental, deliverable pieces.</p></div>
+        <div class="lead-item" style="display: flex; flex-direction: column; gap: 8px;"><p class="mono">Reliability</p><p class="serif" style="font-size: 24px; line-height: 1.25;">Think about failure modes, observability and operational behaviour.</p></div>
+        <div class="lead-item" style="display: flex; flex-direction: column; gap: 8px;"><p class="mono">Technical debt</p><p class="serif" style="font-size: 24px; line-height: 1.25;">Know when debt is acceptable and when it becomes a business risk.</p></div>
+        <div class="lead-item" style="display: flex; flex-direction: column; gap: 8px;"><p class="mono">Team enablement</p><p class="serif" style="font-size: 24px; line-height: 1.25;">Create systems, documentation and decisions that let other engineers move faster.</p></div>
+        <div class="lead-item" style="display: flex; flex-direction: column; gap: 8px;"><p class="mono">Product alignment</p><p class="serif" style="font-size: 24px; line-height: 1.25;">Technical decisions should serve product and business goals.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 PHILOSOPHY -->
+  <section class="rule" style="background: #17150f; color: #f4f1ea; padding: 96px 0;">
+    <div class="wrap grid12">
+      <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 12px;">
+        <p class="mono" style="color: #a9a294;">05 — Principles</p>
+        <h2 style="font-size: 40px; line-height: 1.05;">How I think about engineering</h2>
+      </div>
+      <div style="grid-column: span 9; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px;">
+        <div class="principle" style="border-color: #3b372e;"><span class="mono" style="color: #a9a294;">01</span><p class="serif" style="font-size: 26px; line-height: 1.2;">Understand the problem before designing the solution.</p></div>
+        <div class="principle" style="border-color: #3b372e;"><span class="mono" style="color: #a9a294;">02</span><p class="serif" style="font-size: 26px; line-height: 1.2;">Prefer simple architecture until complexity is justified.</p></div>
+        <div class="principle" style="border-color: #3b372e;"><span class="mono" style="color: #a9a294;">03</span><p class="serif" style="font-size: 26px; line-height: 1.2;">Make trade-offs explicit.</p></div>
+        <div class="principle" style="border-color: #3b372e;"><span class="mono" style="color: #a9a294;">04</span><p class="serif" style="font-size: 26px; line-height: 1.2;">Optimise for maintainability, not cleverness.</p></div>
+        <div class="principle" style="border-color: #3b372e;"><span class="mono" style="color: #a9a294;">05</span><p class="serif" style="font-size: 26px; line-height: 1.2;">Treat production behaviour as part of engineering.</p></div>
+        <div class="principle" style="border-color: #3b372e;"><span class="mono" style="color: #a9a294;">06</span><p class="serif" style="font-size: 26px; line-height: 1.2;">Build systems other engineers can understand.</p></div>
+        <div class="principle" style="border-color: #3b372e;"><span class="mono" style="color: #a9a294;">07</span><p class="serif" style="font-size: 26px; line-height: 1.2;">Technical decisions should serve product goals.</p></div>
+        <div class="principle" style="border-color: #3b372e;"><span class="mono" style="color: #a9a294;">08</span><p class="serif" style="font-size: 26px; line-height: 1.2;">Own outcomes, not just implementation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 WORK WITH ME -->
+  <section id="hire" class="wrap" style="padding: 96px 96px 96px 96px;">
+    <div class="grid12">
+      <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 12px;">
+        <p class="mono">06 — Work with me</p>
+        <h2 style="font-size: 40px; line-height: 1.05;">Have a difficult technical problem?</h2>
+      </div>
+      <div style="grid-column: span 9; display: flex; flex-direction: column; gap: 40px;">
+        <p class="lede" style="max-width: 720px;">I work with teams and founders who need senior technical ownership — from architecture and backend systems to technical rescue and product delivery.</p>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;">
+          <div class="service"><p class="mono">01</p><h3 style="font-size: 26px;">Technical audit</h3><p style="font-size: 15px; color: #3a372f;">Review an existing system and identify architectural, reliability and scalability problems — with a prioritised plan, not a report.</p></div>
+          <div class="service"><p class="mono">02</p><h3 style="font-size: 26px;">Architecture</h3><p style="font-size: 15px; color: #3a372f;">Design the technical foundation for a new product or a major feature, including the decisions you will be living with for years.</p></div>
+          <div class="service"><p class="mono">03</p><h3 style="font-size: 26px;">Backend engineering</h3><p style="font-size: 15px; color: #3a372f;">Build APIs, integrations, data processing and the core business systems the product depends on.</p></div>
+          <div class="service"><p class="mono">04</p><h3 style="font-size: 26px;">Technical rescue</h3><p style="font-size: 15px; color: #3a372f;">Stabilise or restructure a system that has become slow, fragile or difficult to change.</p></div>
+          <div class="service"><p class="mono">05</p><h3 style="font-size: 26px;">MVP engineering</h3><p style="font-size: 15px; color: #3a372f;">Turn a product idea into a production-ready technical foundation that will not need rewriting after the first customers.</p></div>
+          <div class="service"><p class="mono">06</p><h3 style="font-size: 26px;">Technical leadership</h3><p style="font-size: 15px; color: #3a372f;">Senior technical ownership for startups that do not yet have a dedicated technical lead.</p></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <a href="mailto:hello@illsv.com" class="btn btn-primary" style="background: {{accent}}; border-color: {{accent}};">Let's talk</a>
+          <p style="font-size: 14px; color: #6b665c;">hello@illsv.com — a short description of the problem is enough to start.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 TECHNOLOGY (compact) -->
+  <section class="wrap rule" style="padding: 64px 96px 64px 96px;">
+    <div class="grid12">
+      <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 12px;">
+        <p class="mono">07 — Tools</p>
+        <h2 style="font-size: 28px; line-height: 1.1;">Technology</h2>
+        <p style="font-size: 14px; color: #6b665c;">Supporting evidence, not identity.</p>
+      </div>
+      <div style="grid-column: span 6; display: flex; flex-direction: column;">
+        <div class="tech-row"><span class="field-label">Backend</span><span>Ruby · Rails · Go · Node.js</span></div>
+        <div class="tech-row"><span class="field-label">Data</span><span>PostgreSQL · Redis</span></div>
+        <div class="tech-row"><span class="field-label">Infrastructure</span><span>AWS · Docker · Kubernetes</span></div>
+        <div class="tech-row"><span class="field-label">Messaging</span><span>Kafka · RabbitMQ · NATS · Sidekiq</span></div>
+        <div class="tech-row"><span class="field-label">Frontend</span><span>TypeScript · React · Vue</span></div>
+        <div class="tech-row" style="border-bottom: 1px solid #d8d2c5;"><span class="field-label">Other</span><span>AI integrations · APIs · WebSockets · Web scraping</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 EXPERIENCE -->
+  <section id="experience" class="wrap rule" style="padding: 96px 96px 64px 96px;">
+    <div class="grid12">
+      <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 12px;">
+        <p class="mono">08 — Experience</p>
+        <h2 style="font-size: 40px; line-height: 1.05;">Role → scope → ownership → impact</h2>
+      </div>
+      <div style="grid-column: span 9; display: flex; flex-direction: column;">
+        <div class="role">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <h3 style="font-size: 26px;">Technical Lead / Senior Software Engineer</h3>
+            <p class="mono"><span class="ph">[Company]</span> · <span class="ph">[Year – present]</span></p>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <div class="field" style="grid-template-columns: 110px minmax(0, 1fr);"><span class="field-label">Scope</span><p>Backend and platform for an AI agent product: orchestration, integrations, background processing, data model.</p></div>
+            <div class="field" style="grid-template-columns: 110px minmax(0, 1fr);"><span class="field-label">Owned</span><p>Architecture and delivery of the workflow platform; technical decisions for the backend; reliability and operability in production.</p></div>
+            <div class="field" style="grid-template-columns: 110px minmax(0, 1fr);"><span class="field-label">Impact</span><p><span class="ph">[What changed — a number, a capability the product did not have before, a risk removed.]</span></p></div>
+          </div>
+        </div>
+        <div class="role">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <h3 style="font-size: 26px;"><span class="ph">[Role]</span></h3>
+            <p class="mono"><span class="ph">[Company]</span> · <span class="ph">[Years]</span></p>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <div class="field" style="grid-template-columns: 110px minmax(0, 1fr);"><span class="field-label">Scope</span><p><span class="ph">[Systems and area of the product.]</span></p></div>
+            <div class="field" style="grid-template-columns: 110px minmax(0, 1fr);"><span class="field-label">Owned</span><p><span class="ph">[What you owned and decided.]</span></p></div>
+            <div class="field" style="grid-template-columns: 110px minmax(0, 1fr);"><span class="field-label">Impact</span><p><span class="ph">[What changed because of your work.]</span></p></div>
+          </div>
+        </div>
+        <div class="role" style="border-bottom: 1px solid #d8d2c5;">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <h3 style="font-size: 26px;"><span class="ph">[Role]</span></h3>
+            <p class="mono"><span class="ph">[Company]</span> · <span class="ph">[Years]</span></p>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <div class="field" style="grid-template-columns: 110px minmax(0, 1fr);"><span class="field-label">Scope</span><p><span class="ph">[Systems and area of the product.]</span></p></div>
+            <div class="field" style="grid-template-columns: 110px minmax(0, 1fr);"><span class="field-label">Owned</span><p><span class="ph">[What you owned and decided.]</span></p></div>
+            <div class="field" style="grid-template-columns: 110px minmax(0, 1fr);"><span class="field-label">Impact</span><p><span class="ph">[What changed because of your work.]</span></p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 ABOUT + 10 PROJECTS -->
+  <section id="about" class="wrap rule" style="padding: 96px 96px 96px 96px;">
+    <div class="grid12">
+      <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 12px;">
+        <p class="mono">09 — About</p>
+        <h2 style="font-size: 40px; line-height: 1.05;">Briefly</h2>
+      </div>
+      <div style="grid-column: span 6; display: flex; flex-direction: column; gap: 20px;">
+        <p class="lede">I'm a software engineer focused on backend systems, architecture and technical ownership.</p>
+        <p>Most of my work has involved taking complex product requirements, turning them into practical technical solutions, and carrying those solutions through implementation and production.</p>
+        <p>My background is strongly rooted in Ruby and Rails, but I care much more about solving the underlying engineering problem than about any particular technology.</p>
+        <p class="muted"><span class="ph">[One personal line — where you are based, what you do away from the keyboard.]</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="wrap rule" style="padding: 64px 96px 96px 96px;">
+    <div class="grid12">
+      <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 12px;">
+        <p class="mono">10 — Independent work</p>
+        <h2 style="font-size: 28px; line-height: 1.1;">Things I build on my own</h2>
+        <p style="font-size: 14px; color: #6b665c;">Curiosity, product thinking, and the habit of shipping without a team around.</p>
+      </div>
+      <div style="grid-column: span 9; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;">
+        <a href="#projects" class="card"><p class="mono">SaaS experiment</p><h3 style="font-size: 22px;"><span class="ph">[Project name]</span></h3><p style="font-size: 14px; color: #3a372f;"><span class="ph">[The problem it addresses, and what was built.]</span></p></a>
+        <a href="#projects" class="card"><p class="mono">Developer tool</p><h3 style="font-size: 22px;"><span class="ph">[Project name]</span></h3><p style="font-size: 14px; color: #3a372f;"><span class="ph">[The problem it addresses, and what was built.]</span></p></a>
+        <a href="#projects" class="card"><p class="mono">AI experiment</p><h3 style="font-size: 22px;"><span class="ph">[Project name]</span></h3><p style="font-size: 14px; color: #3a372f;"><span class="ph">[The problem it addresses, and what was built.]</span></p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 CONTACT -->
+  <section id="contact" class="rule" style="padding: 120px 0 64px 0;">
+    <div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+      <p class="mono">11 — Contact</p>
+      <h2 style="font-size: 80px; line-height: 1; max-width: 1000px;">Have a technical problem <em style="font-style: italic;">worth solving?</em></h2>
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px;">
+        <a href="mailto:hello@illsv.com" class="serif" style="font-size: 44px; border-bottom: 2px solid {{accent}}; padding-bottom: 4px; color: #17150f;">hello@illsv.com</a>
+        <div style="display: flex; gap: 40px;">
+          <div style="display: flex; flex-direction: column; gap: 4px;"><span class="mono">GitHub</span><a href="https://github.com/illsv" style="font-size: 16px;">@illsv</a></div>
+          <div style="display: flex; flex-direction: column; gap: 4px;"><span class="mono">LinkedIn</span><a href="https://linkedin.com/in/illia-losiev" style="font-size: 16px;">Illia Losiev</a></div>
+        </div>
+      </div>
+      <div class="rule" style="display: flex; justify-content: space-between; padding-top: 24px; margin-top: 40px;">
+        <p class="mono" style="text-transform: none; letter-spacing: 0.02em;">Illia Losiev — illsv.com</p>
+        <p class="mono" style="text-transform: none; letter-spacing: 0.02em;">Architecture · Engineering · Delivery · Ownership</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#b3512e","options":["#b3512e","#1f4d3a","#2b3a67","#17150f"],"section":"Theme"},"$preview":{"width":1440,"height":11200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#b3512e' };
+  }
+}
+</script>
+</body>
+</html>

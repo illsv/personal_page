@@ -1,0 +1,14 @@
+# Independent work. Each entry: what problem it addresses and what was built.
+# Uncomment and fill the entries below to add more.
+- kind: This site
+  title: illsv.com
+  text: "Designed on a multi-artboard canvas with Claude, then built as a Hugo site with Claude Code as a pairing partner: no framework, zero JavaScript, self-hosted fonts, deployed from a Git push. The stack is the argument — the simplest architecture that meets the requirement."
+  url: ""
+# - kind: SaaS experiment
+#   title: "[Project name]"
+#   text: "[The problem it addresses, and what was built.]"
+#   url: ""
+# - kind: Developer tool
+#   title: "[Project name]"
+#   text: "[The problem it addresses, and what was built.]"
+#   url: ""

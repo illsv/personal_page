@@ -1,0 +1,44 @@
+<figure class="diagram-figure">
+<svg class="diagram" viewBox="0 0 860 330" role="img" aria-labelledby="arch-title">
+  <title id="arch-title">Architecture: product UI, routing layer, bounded assistants, shared tool layer enforcing permissions, tenant data, and evaluation suites beside the platform</title>
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/></marker></defs>
+  <rect x="30" y="110" width="120" height="64" class="box"/>
+  <text x="90" y="138" text-anchor="middle" font-size="12">Product UI</text>
+  <text x="90" y="156" text-anchor="middle" font-size="10" class="dim">Rails · multi-tenant</text>
+  <rect x="195" y="110" width="130" height="64" class="box box--ink"/>
+  <text x="260" y="138" text-anchor="middle" font-size="12" class="inv">Routing</text>
+  <text x="260" y="156" text-anchor="middle" font-size="10" class="inv dim">picks the assistant</text>
+  <rect x="370" y="30" width="150" height="52" class="box"/>
+  <text x="445" y="52" text-anchor="middle" font-size="12">System assistants</text>
+  <text x="445" y="68" text-anchor="middle" font-size="10" class="dim">conversation state</text>
+  <rect x="370" y="116" width="150" height="52" class="box"/>
+  <text x="445" y="138" text-anchor="middle" font-size="12">Report builder</text>
+  <text x="445" y="154" text-anchor="middle" font-size="10" class="dim">saved reports · exports</text>
+  <rect x="370" y="202" width="150" height="52" class="box"/>
+  <text x="445" y="224" text-anchor="middle" font-size="12">Analytics agents</text>
+  <text x="445" y="240" text-anchor="middle" font-size="10" class="dim">dashboards · queries</text>
+  <rect x="575" y="90" width="140" height="104" class="box"/>
+  <text x="645" y="118" text-anchor="middle" font-size="12">Tool layer</text>
+  <text x="645" y="136" text-anchor="middle" font-size="10" class="dim">data query · report</text>
+  <text x="645" y="150" text-anchor="middle" font-size="10" class="dim">export · widgets</text>
+  <text x="645" y="172" text-anchor="middle" font-size="10">permissions enforced</text>
+  <rect x="740" y="110" width="100" height="64" class="box"/>
+  <text x="790" y="138" text-anchor="middle" font-size="12">Tenant data</text>
+  <text x="790" y="156" text-anchor="middle" font-size="10" class="dim">PostgreSQL</text>
+  <rect x="575" y="230" width="140" height="52" class="box" stroke-dasharray="4 3"/>
+  <text x="645" y="252" text-anchor="middle" font-size="12">Evaluation</text>
+  <text x="645" y="268" text-anchor="middle" font-size="10" class="dim">tool coverage · RSpec</text>
+  <line x1="150" y1="142" x2="193" y2="142" class="edge" marker-end="url(#arr)"/>
+  <path d="M 325 142 L 345 142 L 345 56 L 368 56" class="edge" marker-end="url(#arr)"/>
+  <line x1="325" y1="142" x2="368" y2="142" class="edge" marker-end="url(#arr)"/>
+  <path d="M 325 142 L 345 142 L 345 228 L 368 228" class="edge" marker-end="url(#arr)"/>
+  <path d="M 520 56 L 550 56 L 550 142 L 573 142" class="edge" marker-end="url(#arr)"/>
+  <line x1="520" y1="142" x2="573" y2="142" class="edge" marker-end="url(#arr)"/>
+  <path d="M 520 228 L 550 228 L 550 142 L 573 142" class="edge" marker-end="url(#arr)"/>
+  <line x1="715" y1="142" x2="738" y2="142" class="edge" marker-end="url(#arr)"/>
+  <line x1="645" y1="230" x2="645" y2="196" class="edge edge--faint" stroke-dasharray="3 3" marker-end="url(#arr)"/>
+  <path d="M 445 82 L 445 116" class="edge edge--faint" stroke-dasharray="3 3" marker-end="url(#arr)" marker-start="url(#arr)"/>
+  <path d="M 445 168 L 445 202" class="edge edge--faint" stroke-dasharray="3 3" marker-end="url(#arr)" marker-start="url(#arr)"/>
+  <text x="30" y="312" font-size="10" class="dim" letter-spacing="1">FIG. 02 — ASSISTANTS HAND OFF TO EACH OTHER; ALL DATA ACCESS GOES THROUGH THE TOOL LAYER.</text>
+</svg>
+</figure>

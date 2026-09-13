@@ -1,0 +1,16 @@
+- title: Architecture
+  text: Design systems that can evolve without unnecessary complexity.
+- title: Technical decisions
+  text: Choose technologies and approaches based on constraints, not hype.
+- title: Ownership
+  text: Take responsibility for outcomes rather than just assigned tickets.
+- title: Delivery
+  text: Break complex technical problems into incremental, deliverable pieces.
+- title: Reliability
+  text: Think about failure modes, observability and operational behaviour.
+- title: Technical debt
+  text: Know when debt is acceptable and when it becomes a business risk.
+- title: Team enablement
+  text: Create systems, documentation and decisions that let other engineers move faster.
+- title: Product alignment
+  text: Technical decisions should serve product and business goals.

@@ -1,0 +1,12 @@
+- title: Technical audit
+  text: Review an existing system and identify architectural, reliability and scalability problems — with a prioritised plan, not a report.
+- title: Architecture
+  text: Design the technical foundation for a new product or a major feature, including the decisions you will be living with for years.
+- title: Backend engineering
+  text: Build APIs, integrations, data processing and the core business systems the product depends on.
+- title: Technical rescue
+  text: Stabilise or restructure a system that has become slow, fragile or difficult to change.
+- title: MVP engineering
+  text: Turn a product idea into a production-ready technical foundation that will not need rewriting after the first customers.
+- title: Technical leadership
+  text: Senior technical ownership for startups that do not yet have a dedicated technical lead.

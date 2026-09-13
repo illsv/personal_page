@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="page wrap">
+  <header class="page-head">
+    <p class="mono"><a href="/{{ .Section }}/">{{ .Parent.Title }}</a>{{ with .Date }} · {{ .Format "January 2, 2006" }}{{ end }}</p>
+    <h1>{{ partial "ph.html" .Title }}</h1>
+    {{ with .Params.summary }}<p class="lede">{{ partial "ph.html" . }}</p>{{ end }}
+  </header>
+  <div class="prose">{{ .Content }}</div>
+</article>
+{{ partial "contact.html" . }}
+{{ end }}

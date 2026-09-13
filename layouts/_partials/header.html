@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="wordmark" href="/">Illia Losiev</a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        {{ range site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+      </ul>
+    </nav>
+    <a class="mono header-mail" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+    <details class="menu">
+      <summary aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/></svg></summary>
+      <ul>
+        {{ range site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+        <li><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></li>
+      </ul>
+    </details>
+  </div>
+</header>

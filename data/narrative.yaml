@@ -1,0 +1,13 @@
+- label: Problem
+  text: A hard technical problem exists.
+- label: Understanding
+  text: Product and technical constraints, first.
+- label: Decision
+  text: Options weighed, trade-offs made explicit.
+- label: Ownership
+  text: Drives implementation through the hard parts.
+  emphasis: true
+- label: Production
+  text: Shipped, observed, operated for real.
+- label: Outcome
+  text: A measurable change for product and team.

@@ -1,0 +1,24 @@
+{{- $person := dict
+  "@type" "Person"
+  "name" site.Params.author
+  "url" site.BaseURL
+  "email" (printf "mailto:%s" site.Params.email)
+  "jobTitle" "Technical Lead & Software Engineer"
+  "description" site.Params.description
+  "knowsAbout" (slice "Backend engineering" "Software architecture" "Technical leadership" "Ruby on Rails" "PostgreSQL" "Distributed systems")
+  "sameAs" (slice site.Params.github site.Params.linkedin)
+  "address" (dict "@type" "PostalAddress" "addressLocality" "Kyiv" "addressCountry" "UA")
+-}}
+{{- $data := $person -}}
+{{- if and .IsPage (eq .Section "blog") -}}
+  {{- $data = dict
+    "@type" "BlogPosting"
+    "headline" .Title
+    "description" (.Params.description | default .Summary | plainify)
+    "datePublished" (.Date.Format "2006-01-02")
+    "dateModified" (.Lastmod.Format "2006-01-02")
+    "url" .Permalink
+    "author" $person
+  -}}
+{{- end -}}
+<script type="application/ld+json">{{ merge (dict "@context" "https://schema.org") $data | jsonify | safeJS }}</script>

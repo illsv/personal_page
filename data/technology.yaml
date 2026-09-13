@@ -1,0 +1,12 @@
+- group: Backend
+  items: Ruby · Rails · Go · Node.js
+- group: Data
+  items: PostgreSQL · Redis
+- group: Infrastructure
+  items: AWS · Docker · Kubernetes
+- group: Messaging
+  items: Kafka · RabbitMQ · NATS · Sidekiq
+- group: Frontend
+  items: TypeScript · React · Vue
+- group: Other
+  items: AI integrations · APIs · WebSockets · Web scraping

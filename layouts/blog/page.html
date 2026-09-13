@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="page page--post wrap">
+  <header class="page-head">
+    <p class="mono"><a href="/blog/">Blog</a> · <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>{{ with .ReadingTime }} · {{ . }} min read{{ end }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="lede">{{ . }}</p>{{ end }}
+  </header>
+  <div class="prose">{{ .Content }}</div>
+  <footer class="post-foot">
+    <p class="small muted">Written by {{ site.Params.author }}. <a class="textlink" href="/blog/">More posts</a> · <a class="textlink" href="/blog/index.xml">RSS</a></p>
+  </footer>
+</article>
+{{ partial "contact.html" . }}
+{{ end }}
