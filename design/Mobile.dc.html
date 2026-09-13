@@ -7,12 +7,12 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
   <style>
     body { margin: 0; background: #f4f1ea; color: #17150f; font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
     a { color: #17150f; text-decoration: none; }
     a:hover { color: var(--accent, #b3512e); }
-    h1, h2, h3, .serif { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; letter-spacing: -0.01em; }
+    h1, h2, h3, .serif { font-family: "Newsreader", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; letter-spacing: -0.01em; }
     p { margin: 0; text-wrap: pretty; }
     .mono { font-family: "IBM Plex Mono", Menlo, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #6b665c; line-height: 1.5; }
     .btn { display: flex; align-items: center; justify-content: center; height: 52px; padding: 0 20px; font-size: 15px; font-weight: 500; border-radius: 2px; width: 100%; box-sizing: border-box; }
@@ -76,19 +76,22 @@
     <h2 style="font-size: 32px; line-height: 1.05;">Systems I have built and owned</h2>
     <article style="display: flex; flex-direction: column; gap: 16px; padding-top: 8px;">
       <h3 style="font-size: 28px;">AI Agent Platform</h3>
-      <p class="mono">[Company] · [Year–Year]</p>
-      <p style="color: #3a372f;">Built and evolved core parts of an AI agent platform automating customer-facing workflows — the orchestration, integration and background-processing layer that makes agent runs dependable.</p>
+      <p class="mono">EasyLlama · 2025 – present</p>
+      <p style="color: #3a372f;">Architected and own the production AI agent platform inside a multi-tenant Rails SaaS product — the assistants, routing, tooling, conversation state and evaluation infrastructure that turn LLM calls into dependable product workflows.</p>
       <div style="display: flex; flex-direction: column;">
-        <div class="field"><span class="mono">Problem</span><p style="font-size: 15px;">Long-lived, non-deterministic runs that talk to failing third-party systems; retries duplicated side effects.</p></div>
-        <div class="field"><span class="mono">Role</span><p style="font-size: 15px;">Owned the orchestration and integration layer end-to-end.</p></div>
-        <div class="field"><span class="mono">Decision</span><p style="font-size: 15px;">Durable state machine in PostgreSQL; every external call an idempotent, retryable job; thin LLM boundary.</p></div>
-        <div class="field" style="border-bottom: 1px solid #d8d2c5;"><span class="mono">Outcome</span><p style="font-size: 15px;"><span class="ph">[Metric — before → after]</span></p></div>
+        <div class="field"><span class="mono">Problem</span><p style="font-size: 15px;">Isolated AI interactions do not compose. Each new capability meant re-solving routing, permissions, conversation state and quality, and LLM behaviour was hard to trust in a product where tenants must never see each other&#x27;s data.</p></div>
+        <div class="field" style="border-bottom: 1px solid #d8d2c5;"><span class="mono">Outcome</span><p style="font-size: 15px;">Customers build dashboards, query their data and produce, save and export reports through the assistants instead of waiting on engineering. New capabilities are added as tools on shared infrastructure, and regressions in agent behaviour are caught by the evaluation suites before release rather than by customers.</p></div>
       </div>
-      <p class="mono" style="color: #8c8578;">Ruby · Rails · PostgreSQL · Redis · Sidekiq · AI</p>
+      <p class="mono" style="color: #8c8578;">Ruby · Rails · PostgreSQL · Redis · Sidekiq · LLM APIs</p>
+      <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <a href="#work" style="font-size: 14px; border-bottom: 1px solid #b8b1a3; padding-bottom: 2px;">Full record →</a>
+        <a href="#case" style="font-size: 14px; border-bottom: 1px solid #b8b1a3; padding-bottom: 2px;">Read the case study →</a>
+      </div>
     </article>
     <div style="display: flex; flex-direction: column; padding-top: 8px;">
-      <a href="#work" style="display: flex; justify-content: space-between; align-items: center; min-height: 56px; border-top: 1px solid #d8d2c5;"><span class="serif" style="font-size: 22px;"><span class="ph">[Project 2]</span></span><span class="mono">→</span></a>
-      <a href="#work" style="display: flex; justify-content: space-between; align-items: center; min-height: 56px; border-top: 1px solid #d8d2c5; border-bottom: 1px solid #d8d2c5;"><span class="serif" style="font-size: 22px;"><span class="ph">[Project 3]</span></span><span class="mono">→</span></a>
+      <a href="#work" style="display: flex; justify-content: space-between; align-items: center; min-height: 56px; border-top: 1px solid #d8d2c5;"><span class="serif" style="font-size: 22px;">Airbnb and PMS booking synchronisation</span><span class="mono">→</span></a>
+      <a href="#work" style="display: flex; justify-content: space-between; align-items: center; min-height: 56px; border-top: 1px solid #d8d2c5;"><span class="serif" style="font-size: 22px;">SaaS payment platform</span><span class="mono">→</span></a>
+      <a href="#work" style="display: flex; justify-content: space-between; align-items: center; min-height: 56px; border-top: 1px solid #d8d2c5; border-bottom: 1px solid #d8d2c5;"><span class="serif" style="font-size: 22px;">High-load crawling and exchange-data platform</span><span class="mono">→</span></a>
     </div>
   </section>
 

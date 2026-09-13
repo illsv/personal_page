@@ -7,12 +7,12 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
   <style>
     body { margin: 0; background: #161410; color: #ede8dc; font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
     a { color: #ede8dc; text-decoration: none; }
     a:hover { color: var(--accent, #d9764f); }
-    h1, h2, h3, .serif { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; letter-spacing: -0.01em; }
+    h1, h2, h3, .serif { font-family: "Newsreader", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; letter-spacing: -0.01em; }
     p { margin: 0; text-wrap: pretty; }
     .mono { font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #9a937f; line-height: 1.5; }
     .wrap { max-width: 1248px; margin: 0 auto; padding: 0 96px; }
@@ -52,10 +52,9 @@
     <a href="#top" class="serif" style="font-size: 22px; letter-spacing: 0;">Illia Losiev</a>
     <nav class="nav" style="display: flex; gap: 32px; align-items: center;">
       <a href="#work">Selected work</a>
-      <a href="#case">Case study</a>
+      <a href="#case">Case studies</a>
       <a href="#lead">Leadership</a>
       <a href="#hire">Work with me</a>
-      <a href="#contact">Contact</a>
     </nav>
     <a href="mailto:hello@illsv.com" class="mono" style="color: #ede8dc;">hello@illsv.com</a>
   </header>
@@ -70,7 +69,6 @@
         <div style="display: flex; gap: 14px; align-items: center; padding-top: 8px;">
           <a href="#hire" class="btn btn-primary" style="background: {{accent}}; border-color: {{accent}};">Work with me</a>
           <a href="#work" class="btn btn-ghost">View selected work</a>
-          <a href="#cv" style="font-size: 14px; margin-left: 12px; border-bottom: 1px solid #4a4438; padding-bottom: 2px;">Download CV</a>
         </div>
       </div>
       <div style="grid-column: span 4; display: flex; flex-direction: column; gap: 16px; align-items: flex-end;">
@@ -176,57 +174,72 @@
       <div style="grid-column: span 3; display: flex; flex-direction: column; gap: 12px;">
         <p class="mono">02 — Selected work</p>
         <h2 style="font-size: 40px; line-height: 1.05;">Systems I have built and owned</h2>
-        <p style="font-size: 14px; color: #9a937f; padding-top: 8px;">Each entry is a short case study: context, problem, role, decisions, outcome. Technology comes last.</p>
+        <p style="font-size: 14px; color: #9a937f; padding-top: 8px;">The problem and the outcome of each system; the full record — context, role, decisions, engineering — is on the <a href="#work" style="border-bottom: 1px solid #4a4438;">work page</a>.</p>
       </div>
       <div style="grid-column: span 9;">
 
         <article class="work-entry" style="display: flex; flex-direction: column; gap: 28px;">
           <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px;">
             <h3 class="work-title" style="font-size: 34px;">AI Agent Platform</h3>
-            <span class="mono">[Company] · [Year–Year]</span>
+            <span class="mono">EasyLlama · 2025 – present</span>
           </div>
-          <p class="lede" style="font-size: 20px;">Built and evolved core parts of an AI agent platform designed to automate customer-facing workflows — the orchestration, integration and background-processing layer that makes agent runs dependable.</p>
+          <p class="lede" style="font-size: 20px;">Architected and own the production AI agent platform inside a multi-tenant Rails SaaS product — the assistants, routing, tooling, conversation state and evaluation infrastructure that turn LLM calls into dependable product workflows.</p>
           <div style="display: flex; flex-direction: column;">
-            <div class="field"><span class="field-label">Context</span><p>A product where AI agents complete multi-step customer workflows across email, CRM and internal tools. Correctness and reliability mattered more than raw model capability.</p></div>
-            <div class="field"><span class="field-label">Problem</span><p>Agent runs were long-lived, non-deterministic and dependent on third-party systems that fail. Early implementations lost state on errors, duplicated side effects on retry, and were nearly impossible to debug after the fact.</p></div>
-            <div class="field"><span class="field-label">Role</span><p>Owned the orchestration and integration layer end-to-end: architecture, implementation, rollout and operation in production.</p></div>
-            <div class="field"><span class="field-label">Decisions</span><p>Modelled each run as a durable state machine persisted in PostgreSQL instead of an in-memory chain. Isolated every external call behind an idempotent, retryable job. Kept the LLM boundary thin so it could be tested and swapped without touching workflow logic.</p></div>
-            <div class="field"><span class="field-label">Engineering</span><p>Background processing on Sidekiq with per-tenant queues and backpressure; Redis for rate limiting and short-lived coordination; an append-only event log per run for replay and debugging; structured tracing across every step.</p></div>
-            <div class="field"><span class="field-label">Outcome</span><p><span class="ph">[Metric — e.g. share of runs completing without manual intervention, before → after]</span> and a platform other engineers could extend with new workflow types without touching the core.</p></div>
+            <div class="field"><span class="field-label">Problem</span><p>Isolated AI interactions do not compose. Each new capability meant re-solving routing, permissions, conversation state and quality, and LLM behaviour was hard to trust in a product where tenants must never see each other&#x27;s data.</p></div>
+            <div class="field"><span class="field-label">Outcome</span><p>Customers build dashboards, query their data and produce, save and export reports through the assistants instead of waiting on engineering. New capabilities are added as tools on shared infrastructure, and regressions in agent behaviour are caught by the evaluation suites before release rather than by customers.</p></div>
           </div>
-          <p class="mono" style="color: #857d6e;">Ruby · Rails · PostgreSQL · Redis · Sidekiq · AI</p>
+          <p class="mono" style="color: #857d6e;">Ruby · Rails · PostgreSQL · Redis · Sidekiq · LLM APIs</p>
+          <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+            <a href="#work" style="font-size: 14px; border-bottom: 1px solid #4a4438; padding-bottom: 2px;">Full record →</a> <a href="#case" style="font-size: 14px; border-bottom: 1px solid #4a4438; padding-bottom: 2px;">Read the case study →</a>
+          </div>
         </article>
 
         <article class="work-entry" style="display: flex; flex-direction: column; gap: 28px;">
           <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px;">
-            <h3 class="work-title" style="font-size: 34px;"><span class="ph">[Project 2 — name]</span></h3>
-            <span class="mono">[Company] · [Year–Year]</span>
+            <h3 class="work-title" style="font-size: 34px;">Airbnb and PMS booking synchronisation</h3>
+            <span class="mono">boomnow · 2024 – 2025</span>
           </div>
-          <p class="lede" style="font-size: 20px;"><span class="ph">[One sentence: what was built and why it mattered to the business.]</span></p>
+          <p class="lede" style="font-size: 20px;">Owned the architecture and implementation of the Airbnb integration for a hospitality platform: keeping bookings consistent between the product and external property-management systems.</p>
           <div style="display: flex; flex-direction: column;">
-            <div class="field"><span class="field-label">Context</span><p><span class="ph">[What the product or business was.]</span></p></div>
-            <div class="field"><span class="field-label">Problem</span><p><span class="ph">[What was difficult — scale, correctness, integration, legacy constraints.]</span></p></div>
-            <div class="field"><span class="field-label">Role</span><p><span class="ph">[What you personally owned.]</span></p></div>
-            <div class="field"><span class="field-label">Decisions</span><p><span class="ph">[The two or three technical decisions that shaped the result.]</span></p></div>
-            <div class="field"><span class="field-label">Outcome</span><p><span class="ph">[What changed — a number, a capability, a risk removed.]</span></p></div>
+            <div class="field"><span class="field-label">Problem</span><p>Two systems each believe they own the booking. Synchronisation has to survive partial failures, late updates and multi-unit allocation, in a multi-tenant environment where a bug is visible to a guest standing at a door.</p></div>
+            <div class="field"><span class="field-label">Outcome</span><p>Bookings from Airbnb and third-party PMS platforms flow into the platform and are allocated across units through one set of workflows, and integration problems can be diagnosed from tenant state without an engineer reproducing them.</p></div>
           </div>
-          <p class="mono" style="color: #857d6e;">[Technologies · at the end]</p>
+          <p class="mono" style="color: #857d6e;">Ruby · Rails · PostgreSQL · Sidekiq · Airbnb API</p>
+          <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+            <a href="#work" style="font-size: 14px; border-bottom: 1px solid #4a4438; padding-bottom: 2px;">Full record →</a>
+          </div>
         </article>
 
         <article class="work-entry" style="display: flex; flex-direction: column; gap: 28px;">
           <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px;">
-            <h3 class="work-title" style="font-size: 34px;"><span class="ph">[Project 3 — name]</span></h3>
-            <span class="mono">[Company] · [Year–Year]</span>
+            <h3 class="work-title" style="font-size: 34px;">SaaS payment platform</h3>
+            <span class="mono">MobiDev · 2022 – 2023</span>
           </div>
-          <p class="lede" style="font-size: 20px;"><span class="ph">[One sentence: what was built and why it mattered to the business.]</span></p>
+          <p class="lede" style="font-size: 20px;">Led the development of a SaaS payment platform from the ground up as Tech Lead — technical planning, engineering workflows and release coordination.</p>
           <div style="display: flex; flex-direction: column;">
-            <div class="field"><span class="field-label">Context</span><p><span class="ph">[What the product or business was.]</span></p></div>
-            <div class="field"><span class="field-label">Problem</span><p><span class="ph">[What was difficult.]</span></p></div>
-            <div class="field"><span class="field-label">Role</span><p><span class="ph">[What you personally owned.]</span></p></div>
-            <div class="field"><span class="field-label">Decisions</span><p><span class="ph">[Key technical decisions.]</span></p></div>
-            <div class="field"><span class="field-label">Outcome</span><p><span class="ph">[What changed.]</span></p></div>
+            <div class="field"><span class="field-label">Problem</span><p>Standing up a payments system from zero while keeping releases predictable for a team that was forming at the same time.</p></div>
+            <div class="field"><span class="field-label">Outcome</span><p>A platform delivered from an empty repository with a repeatable release process, and deployments about a quarter faster than the starting point.</p></div>
           </div>
-          <p class="mono" style="color: #857d6e;">[Technologies · at the end]</p>
+          <p class="mono" style="color: #857d6e;">Ruby · Rails · PostgreSQL · CI/CD</p>
+          <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+            <a href="#work" style="font-size: 14px; border-bottom: 1px solid #4a4438; padding-bottom: 2px;">Full record →</a>
+          </div>
+        </article>
+
+        <article class="work-entry" style="display: flex; flex-direction: column; gap: 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px;">
+            <h3 class="work-title" style="font-size: 34px;">High-load crawling and exchange-data platform</h3>
+            <span class="mono">DigitalBridges · 2016 – 2022</span>
+          </div>
+          <p class="lede" style="font-size: 20px;">Core architecture, large-scale web crawlers and crypto-exchange integrations for a data-heavy platform, over five years of growth and production hardening.</p>
+          <div style="display: flex; flex-direction: column;">
+            <div class="field"><span class="field-label">Problem</span><p>Crawling at volume without being blocked, keeping exchange data consistent, and making search over a large dataset fast enough — while a legacy frontend and long-standing production issues slowed the team down.</p></div>
+            <div class="field"><span class="field-label">Outcome</span><p>A platform that stayed stable and consistent as the dataset and load grew over five years, with the long-standing production issues resolved and a frontend the team could keep evolving.</p></div>
+          </div>
+          <p class="mono" style="color: #857d6e;">Ruby · Rails · PostgreSQL · Redis · Vue.js · Web scraping</p>
+          <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+            <a href="#work" style="font-size: 14px; border-bottom: 1px solid #4a4438; padding-bottom: 2px;">Full record →</a>
+          </div>
         </article>
 
       </div>
