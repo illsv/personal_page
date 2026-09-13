@@ -169,28 +169,11 @@
   </div>
 </section>
 
-<section id="projects" class="section section--compact wrap rule">
-  <div class="section-grid">
-    <div class="section-head">
-      <p class="mono">09 — Independent work</p>
-      <h2 class="h2--sm">Things I build on my own</h2>
-      <p class="small muted">Curiosity, product thinking, and the habit of shipping without a team around.</p>
-    </div>
-    <div class="section-body cards">
-      {{ range hugo.Data.projects }}
-      {{ if .url }}<a class="card" href="{{ .url }}">{{ else }}<div class="card">{{ end }}
-        <p class="mono">{{ .kind }}</p><h3>{{ partial "ph.html" .title }}</h3><p class="small">{{ partial "ph.html" .text }}</p>
-      {{ if .url }}</a>{{ else }}</div>{{ end }}
-      {{ end }}
-    </div>
-  </div>
-</section>
-
 {{ with (where site.RegularPages "Section" "blog") }}
 <section id="writing" class="section section--compact wrap rule">
   <div class="section-grid">
     <div class="section-head">
-      <p class="mono">10 — Writing</p>
+      <p class="mono">09 — Writing</p>
       <h2 class="h2--sm">Recent notes</h2>
       <a class="textlink" href="/blog/">All posts</a>
     </div>

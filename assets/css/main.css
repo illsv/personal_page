@@ -201,13 +201,6 @@ img, svg { max-width: 100%; height: auto; }
 /* About */
 .about { gap: 20px; }
 
-/* Cards */
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-.card { border: 1px solid var(--rule); padding: 24px; background: var(--paper-2); display: flex; flex-direction: column; gap: 10px; transition: border-color 160ms ease; }
-.card h3 { font-size: 22px; }
-.card .small { color: var(--ink-2); font-size: 14px; }
-a.card:hover { border-color: var(--ink); color: inherit; }
-
 /* Posts */
 .posts { gap: 0; }
 .post-row { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 18px 0; border-top: 1px solid var(--rule); }
@@ -372,7 +365,6 @@ a.card:hover { border-color: var(--ink); color: inherit; }
   .hire-cta { flex-direction: column; align-items: stretch; gap: 12px; }
   .hire-cta .btn { width: 100%; }
 
-  .cards { grid-template-columns: minmax(0, 1fr); }
   .options { grid-template-columns: minmax(0, 1fr); }
   .option { border-right: 0; border-bottom: 1px solid var(--rule); }
   .option:last-child { border-bottom: 0; }
