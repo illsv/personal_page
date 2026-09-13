@@ -2,7 +2,7 @@
 title: "Illia Losiev — Technical Lead & Software Engineer"
 description: "Technical Lead and Senior Software Engineer focused on backend systems, architecture and technical ownership. I take ownership of technical problems, from architecture to production."
 hero:
-  kicker: "Technical Lead & Software Engineer — Backend systems · Architecture · Technical ownership"
+  kicker: "Technical Lead & Software Engineer — Architecture · Technical ownership"
   headline: "I take ownership of technical problems,"
   headlineEm: "from architecture to production."
   lede: "I design and build reliable software systems, lead technical decisions, and turn complex product problems into working products."
