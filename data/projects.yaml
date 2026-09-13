@@ -1,14 +1,18 @@
 # Independent work. Each entry: what problem it addresses and what was built.
-# Uncomment and fill the entries below to add more.
+# Anything in [brackets] is a placeholder still waiting for the real fact.
+- kind: For the Armed Forces of Ukraine
+  title: "[Project name]"
+  text: "Software for units of the Armed Forces of Ukraine, built and supported in my own time: [what it does — e.g. field data collection, logistics, reporting] for [who uses it]. Reliability under bad connectivity and simple deployment matter more than features."
+  url: ""
+- kind: Games
+  title: "[Game name]"
+  text: "[Genre and platform] — a side project where I own everything from the game loop to the release: [engine or stack], [what makes it interesting technically — e.g. procedural levels, netcode, tooling]."
+  url: ""
+- kind: Mobile apps
+  title: "[App name]"
+  text: "[What the app does and for whom] — [platform, stack]. Shipped to [App Store / Google Play]; [one line on the hardest engineering part — e.g. offline sync, background processing, payments]."
+  url: ""
 - kind: This site
   title: illsv.com
   text: "Designed on a multi-artboard canvas with Claude, then built as a Hugo site with Claude Code as a pairing partner: no framework, zero JavaScript, self-hosted fonts, deployed from a Git push. The stack is the argument — the simplest architecture that meets the requirement."
   url: ""
-# - kind: SaaS experiment
-#   title: "[Project name]"
-#   text: "[The problem it addresses, and what was built.]"
-#   url: ""
-# - kind: Developer tool
-#   title: "[Project name]"
-#   text: "[The problem it addresses, and what was built.]"
-#   url: ""
