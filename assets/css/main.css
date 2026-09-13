@@ -191,6 +191,7 @@ img, svg { max-width: 100%; height: auto; }
 .service:hover { border-color: var(--ink); }
 .service .small { color: var(--ink-2); }
 .hire-cta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.hire-cta__contact { display: none; } /* phones get the in-page link instead of mailto */
 
 /* Technology */
 .tech { gap: 0; }
@@ -366,8 +367,11 @@ a.card:hover { border-color: var(--ink); color: inherit; }
   .service h3 { grid-column: 1; grid-row: 1; font-size: 22px; }
   .service .small { grid-column: 1 / -1; font-size: 14px; }
   .service:last-child { border-bottom: 1px solid var(--rule); }
+  .services { order: 1; } /* the CTA comes right after the lede so it is on screen on arrival */
   .hire-cta { flex-direction: column; align-items: stretch; gap: 12px; }
   .hire-cta .btn { width: 100%; }
+  .hire-cta__mail { display: none; }
+  .hire-cta__contact { display: inline-flex; }
 
   .cards { grid-template-columns: minmax(0, 1fr); }
   .options { grid-template-columns: minmax(0, 1fr); }
@@ -375,7 +379,7 @@ a.card:hover { border-color: var(--ink); color: inherit; }
   .option:last-child { border-bottom: 0; }
   .post-title { font-size: 22px; }
 
-  .contact { padding-top: 56px; padding-bottom: 32px; }
+  .contact { padding-top: 56px; padding-bottom: 56px; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; }
   .contact-inner { gap: 24px; }
   .contact-title { font-size: clamp(36px, 11vw, 44px); }
   .contact-mail { font-size: 26px; align-self: flex-start; }
