@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; background: #161410; color: #ede8dc; font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    a { color: #ede8dc; text-decoration: none; }
+    a:hover { color: #d9764f; }
+    h1, h2, h3, .serif { font-family: "Newsreader", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; letter-spacing: -0.01em; }
+    p { margin: 0; text-wrap: pretty; }
+    .mono { font-family: "IBM Plex Mono", Menlo, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #9a937f; line-height: 1.5; }
+    .btn { display: flex; align-items: center; justify-content: center; height: 52px; padding: 0 20px; font-size: 15px; font-weight: 500; border-radius: 2px; width: 100%; box-sizing: border-box; }
+    .btn-primary { background: #d9764f; color: #161410; border: 1px solid #d9764f; }
+    .btn-ghost { background: transparent; color: #ede8dc; border: 1px solid #ede8dc; }
+    .portrait { object-fit: cover; filter: grayscale(1) contrast(1.05) brightness(0.88); display: block; flex-shrink: 0; }
+  </style>
+</helmet>
+
+<div style="background: #161410; width: 390px; min-height: 100%; box-sizing: border-box;">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 20px;">
+    <a href="#top" class="serif" style="font-size: 20px;">Illia Losiev</a>
+    <a href="#menu" aria-label="Menu" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-right: -10px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ede8dc" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"></line><line x1="3" y1="16" x2="21" y2="16"></line></svg>
+    </a>
+  </header>
+
+  <!-- C · Signature: type first; the portrait sits with its caption just before the actions -->
+  <section id="top" style="padding: 24px 20px 40px 20px; display: flex; flex-direction: column; gap: 24px;">
+    <p class="mono">Technical Lead &amp; Software Engineer — Architecture · Technical ownership</p>
+    <h1 style="font-size: 48px; line-height: 1;">I take ownership of technical problems, <em style="font-style: italic;">from architecture to production.</em></h1>
+    <p style="font-size: 18px; line-height: 1.45; color: #cbc4b5;">I design and build reliable software systems, lead technical decisions, and turn complex product problems into working products.</p>
+    <div style="display: flex; align-items: flex-end; gap: 16px; padding-top: 4px;">
+      <img src="portrait.jpg" alt="Illia Losiev" class="portrait" style="width: 72px; height: 90px; clip-path: polygon(0 0, 100% 0, 100% 84%, 84% 100%, 0 100%);">
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <p class="mono">fig. 01 — Illia Losiev</p>
+        <p style="font-size: 14px; color: #9a937f;">Open to Senior, Lead and Staff roles, and to selected consulting work.</p>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 4px;">
+      <a href="#hire" class="btn btn-primary">Work with me</a>
+      <a href="#work" class="btn btn-ghost">View selected work</a>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+</body>
+</html>

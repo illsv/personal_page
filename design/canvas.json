@@ -31,6 +31,30 @@
       "w": 390,
       "h": 4600,
       "title": "illsv.com — iPhone, dark"
+    },
+    {
+      "file": "PhoneHeroA.dc.html",
+      "x": 4500,
+      "y": 0,
+      "w": 390,
+      "h": 900,
+      "title": "Phone hero · A — Byline"
+    },
+    {
+      "file": "PhoneHeroB.dc.html",
+      "x": 5000,
+      "y": 0,
+      "w": 390,
+      "h": 900,
+      "title": "Phone hero · B — Band"
+    },
+    {
+      "file": "PhoneHeroC.dc.html",
+      "x": 5500,
+      "y": 0,
+      "w": 390,
+      "h": 900,
+      "title": "Phone hero · C — Signature"
     }
   ],
   "annotations": [
@@ -40,6 +64,13 @@
       "y": 0,
       "w": 360,
       "text": "Dark theme — same warm family, inverted: ground #161410, cream ink #ede8dc, oxide accent lifted to #d9764f so it passes contrast on dark; button text goes dark on the accent.\n\nThe ink blocks (principles, case result, mobile emphasis row) become raised warm-charcoal panels (#211e18) instead of cream slabs — less glare at night. Tell me if you'd rather keep them as inverted cream blocks.\n\nOn the site the theme follows the system setting (prefers-color-scheme), no JS and no toggle."
+    },
+    {
+      "id": "phone-hero-note",
+      "x": 4500,
+      "y": 1020,
+      "w": 1390,
+      "text": "Phone hero — three ways to make the portrait and the kicker read as one thing (the current layout leaves them as two orphans in one row).\n\nA · Byline — small portrait inline with the kicker, like an author byline. Cheapest change, keeps the type-first hero. Trade-off: the portrait becomes a thumbnail.\n\nB · Band — a landscape crop of the portrait across the column, the kicker as its caption. Strongest presence for the photo. Trade-off: pushes the headline ~150 px down and needs a crop that keeps the face.\n\nC · Signature — kicker and headline first, the portrait with its “fig. 01” caption and the availability note just before the buttons. Closest to the desktop composition. Trade-off: the hero gets longer; the photo is seen after the pitch, not before."
     }
   ],
   "launch": {
