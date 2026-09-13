@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; background: #161410; color: #ede8dc; font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    a { color: #ede8dc; text-decoration: none; }
+    a:hover { color: var(--accent, #d9764f); }
+    h1, h2, h3, .serif { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; letter-spacing: -0.01em; }
+    p { margin: 0; text-wrap: pretty; }
+    .mono { font-family: "IBM Plex Mono", Menlo, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #9a937f; line-height: 1.5; }
+    .btn { display: flex; align-items: center; justify-content: center; height: 52px; padding: 0 20px; font-size: 15px; font-weight: 500; border-radius: 2px; width: 100%; box-sizing: border-box; }
+    .btn-primary { background: #ede8dc; color: #161410; border: 1px solid #ede8dc; }
+    .btn-ghost { background: transparent; color: #ede8dc; border: 1px solid #ede8dc; }
+    .rule { border-top: 1px solid #322e26; }
+    .field { display: flex; flex-direction: column; gap: 4px; padding: 14px 0; border-top: 1px solid #322e26; }
+    .ph { color: #857d6e; background: #2a2720; padding: 0 3px; border-radius: 2px; }
+    .step { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-top: 1px solid #322e26; align-items: baseline; }
+    .svc { display: flex; justify-content: space-between; align-items: center; min-height: 56px; padding: 12px 0; border-top: 1px solid #322e26; }
+  </style>
+</helmet>
+
+<div style="--accent: {{accent}}; background: #161410; width: 390px; box-sizing: border-box;">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 20px;">
+    <a href="#top" class="serif" style="font-size: 20px;">Illia Losiev</a>
+    <a href="#menu" aria-label="Menu" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-right: -10px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ede8dc" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="8" x2="21" y2="8"></line><line x1="3" y1="16" x2="21" y2="16"></line></svg>
+    </a>
+  </header>
+
+  <!-- HERO: portrait as a small geometric block, type dominates -->
+  <section id="top" style="padding: 24px 20px 40px 20px; display: flex; flex-direction: column; gap: 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+      <p class="mono" style="max-width: 200px;">Technical Lead &amp; Software Engineer</p>
+      <div style="width: 96px; height: 120px; background: #2a2720; clip-path: polygon(0 0, 100% 0, 100% 84%, 84% 100%, 0 100%); flex-shrink: 0;"></div>
+    </div>
+    <h1 style="font-size: 48px; line-height: 1;">I take ownership of technical problems, <em style="font-style: italic;">from architecture to production.</em></h1>
+    <p style="font-size: 18px; line-height: 1.45; color: #cbc4b5;">I design and build reliable software systems, lead technical decisions, and turn complex product problems into working products.</p>
+    <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 4px;">
+      <a href="#hire" class="btn btn-primary" style="background: {{accent}}; border-color: {{accent}};">Work with me</a>
+      <a href="#work" class="btn btn-ghost">View selected work</a>
+    </div>
+  </section>
+
+  <section class="rule" style="padding: 24px 20px 32px 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px;">
+    <div style="display: flex; flex-direction: column; gap: 6px;"><p class="mono">Who</p><p style="font-size: 14px;">An experienced software engineer.</p></div>
+    <div style="display: flex; flex-direction: column; gap: 6px;"><p class="mono">What</p><p style="font-size: 14px;">Backend systems, architecture, technical leadership.</p></div>
+    <div style="display: flex; flex-direction: column; gap: 6px;"><p class="mono">How</p><p style="font-size: 14px;">Owns problems end-to-end.</p></div>
+    <div style="display: flex; flex-direction: column; gap: 6px;"><p class="mono">Why it matters</p><p style="font-size: 14px;">Ambiguous requirements become reliable production software.</p></div>
+  </section>
+
+  <!-- 01 narrative as a vertical ladder -->
+  <section class="rule" style="padding: 40px 20px; display: flex; flex-direction: column; gap: 20px;">
+    <p class="mono">01 — How I work</p>
+    <h2 style="font-size: 32px; line-height: 1.05;">From problem to outcome</h2>
+    <div style="display: flex; flex-direction: column; padding-top: 8px;">
+      <div class="step"><span class="mono">01</span><div><p style="font-weight: 500;">Problem</p><p style="font-size: 14px; color: #9a937f;">A hard technical problem exists.</p></div></div>
+      <div class="step"><span class="mono">02</span><div><p style="font-weight: 500;">Understanding</p><p style="font-size: 14px; color: #9a937f;">Product and technical constraints, first.</p></div></div>
+      <div class="step"><span class="mono">03</span><div><p style="font-weight: 500;">Decision</p><p style="font-size: 14px; color: #9a937f;">Options weighed, trade-offs made explicit.</p></div></div>
+      <div class="step" style="background: #211e18; color: #ede8dc; margin: 0 -20px; padding: 14px 20px;"><span class="mono" style="color: #9a937f;">04</span><div><p style="font-weight: 500;">Ownership</p><p style="font-size: 14px; color: #b0a996;">Drives implementation through the hard parts.</p></div></div>
+      <div class="step"><span class="mono">05</span><div><p style="font-weight: 500;">Production</p><p style="font-size: 14px; color: #9a937f;">Shipped, observed, operated for real.</p></div></div>
+      <div class="step" style="border-bottom: 1px solid #322e26;"><span class="mono">06</span><div><p style="font-weight: 500;">Outcome</p><p style="font-size: 14px; color: #9a937f;">A measurable change for product and team.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 02 selected work: one entry in full, others as a list -->
+  <section id="work" class="rule" style="padding: 40px 20px; display: flex; flex-direction: column; gap: 20px;">
+    <p class="mono">02 — Selected work</p>
+    <h2 style="font-size: 32px; line-height: 1.05;">Systems I have built and owned</h2>
+    <article style="display: flex; flex-direction: column; gap: 16px; padding-top: 8px;">
+      <h3 style="font-size: 28px;">AI Agent Platform</h3>
+      <p class="mono">[Company] · [Year–Year]</p>
+      <p style="color: #cbc4b5;">Built and evolved core parts of an AI agent platform automating customer-facing workflows — the orchestration, integration and background-processing layer that makes agent runs dependable.</p>
+      <div style="display: flex; flex-direction: column;">
+        <div class="field"><span class="mono">Problem</span><p style="font-size: 15px;">Long-lived, non-deterministic runs that talk to failing third-party systems; retries duplicated side effects.</p></div>
+        <div class="field"><span class="mono">Role</span><p style="font-size: 15px;">Owned the orchestration and integration layer end-to-end.</p></div>
+        <div class="field"><span class="mono">Decision</span><p style="font-size: 15px;">Durable state machine in PostgreSQL; every external call an idempotent, retryable job; thin LLM boundary.</p></div>
+        <div class="field" style="border-bottom: 1px solid #322e26;"><span class="mono">Outcome</span><p style="font-size: 15px;"><span class="ph">[Metric — before → after]</span></p></div>
+      </div>
+      <p class="mono" style="color: #857d6e;">Ruby · Rails · PostgreSQL · Redis · Sidekiq · AI</p>
+    </article>
+    <div style="display: flex; flex-direction: column; padding-top: 8px;">
+      <a href="#work" style="display: flex; justify-content: space-between; align-items: center; min-height: 56px; border-top: 1px solid #322e26;"><span class="serif" style="font-size: 22px;"><span class="ph">[Project 2]</span></span><span class="mono">→</span></a>
+      <a href="#work" style="display: flex; justify-content: space-between; align-items: center; min-height: 56px; border-top: 1px solid #322e26; border-bottom: 1px solid #322e26;"><span class="serif" style="font-size: 22px;"><span class="ph">[Project 3]</span></span><span class="mono">→</span></a>
+    </div>
+  </section>
+
+  <!-- 03 case study teaser -->
+  <section id="case" style="background: #211e18; color: #ede8dc; padding: 40px 20px; display: flex; flex-direction: column; gap: 16px;">
+    <p class="mono" style="color: #9a937f;">03 — Technical case study</p>
+    <h2 style="font-size: 32px; line-height: 1.05;">Making agent runs survive real-world failure</h2>
+    <p style="font-size: 15px; color: #b0a996;">Problem, constraints, three options, the decision, the trade-offs — and what it changed for the team.</p>
+    <a href="#case" style="color: #161410; font-size: 15px; border-bottom: 1px solid #9a937f; align-self: flex-start; padding-bottom: 2px;">Read the case study</a>
+  </section>
+
+  <!-- 04 leadership (4 of 8) -->
+  <section id="lead" style="padding: 40px 20px; display: flex; flex-direction: column; gap: 20px;">
+    <p class="mono">04 — Technical leadership</p>
+    <h2 style="font-size: 32px; line-height: 1.05;">How I lead technical work</h2>
+    <div style="display: flex; flex-direction: column;">
+      <div class="field"><span class="mono">Architecture</span><p class="serif" style="font-size: 21px; line-height: 1.25;">Design systems that can evolve without unnecessary complexity.</p></div>
+      <div class="field"><span class="mono">Technical decisions</span><p class="serif" style="font-size: 21px; line-height: 1.25;">Choose approaches based on constraints, not hype.</p></div>
+      <div class="field"><span class="mono">Ownership</span><p class="serif" style="font-size: 21px; line-height: 1.25;">Take responsibility for outcomes, not just tickets.</p></div>
+      <div class="field"><span class="mono">Reliability</span><p class="serif" style="font-size: 21px; line-height: 1.25;">Think about failure modes, observability and operations.</p></div>
+      <div class="field"><span class="mono">Team enablement</span><p class="serif" style="font-size: 21px; line-height: 1.25;">Decisions and documentation that let others move faster.</p></div>
+      <div class="field" style="border-bottom: 1px solid #322e26;"><span class="mono">Product alignment</span><p class="serif" style="font-size: 21px; line-height: 1.25;">Technical decisions should serve product goals.</p></div>
+    </div>
+  </section>
+
+  <!-- 06 work with me -->
+  <section id="hire" class="rule" style="padding: 40px 20px; display: flex; flex-direction: column; gap: 20px;">
+    <p class="mono">06 — Work with me</p>
+    <h2 style="font-size: 32px; line-height: 1.05;">Have a difficult technical problem?</h2>
+    <p style="color: #cbc4b5;">I work with teams and founders who need senior technical ownership — from architecture and backend systems to technical rescue and product delivery.</p>
+    <div style="display: flex; flex-direction: column;">
+      <div class="svc"><span class="serif" style="font-size: 22px;">Technical audit</span><span class="mono">01</span></div>
+      <div class="svc"><span class="serif" style="font-size: 22px;">Architecture</span><span class="mono">02</span></div>
+      <div class="svc"><span class="serif" style="font-size: 22px;">Backend engineering</span><span class="mono">03</span></div>
+      <div class="svc"><span class="serif" style="font-size: 22px;">Technical rescue</span><span class="mono">04</span></div>
+      <div class="svc"><span class="serif" style="font-size: 22px;">MVP engineering</span><span class="mono">05</span></div>
+      <div class="svc" style="border-bottom: 1px solid #322e26;"><span class="serif" style="font-size: 22px;">Technical leadership</span><span class="mono">06</span></div>
+    </div>
+    <a href="mailto:hello@illsv.com" class="btn btn-primary" style="background: {{accent}}; border-color: {{accent}};">Let's talk</a>
+  </section>
+
+  <!-- 07 tools, compact -->
+  <section class="rule" style="padding: 32px 20px; display: flex; flex-direction: column; gap: 12px;">
+    <p class="mono">07 — Tools</p>
+    <p style="font-size: 14px; color: #cbc4b5; line-height: 1.7;">Ruby · Rails · Go · Node.js · PostgreSQL · Redis · AWS · Docker · Kubernetes · Kafka · RabbitMQ · NATS · Sidekiq · TypeScript · React · Vue · AI integrations · WebSockets</p>
+  </section>
+
+  <!-- 11 contact -->
+  <section id="contact" class="rule" style="padding: 48px 20px 32px 20px; display: flex; flex-direction: column; gap: 24px;">
+    <p class="mono">11 — Contact</p>
+    <h2 style="font-size: 44px; line-height: 1;">Have a technical problem <em style="font-style: italic;">worth solving?</em></h2>
+    <a href="mailto:hello@illsv.com" class="serif" style="font-size: 28px; border-bottom: 2px solid {{accent}}; align-self: flex-start; padding-bottom: 2px;">hello@illsv.com</a>
+    <div style="display: flex; gap: 32px;">
+      <div style="display: flex; flex-direction: column; gap: 2px;"><span class="mono">GitHub</span><a href="https://github.com/illsv" style="font-size: 15px;">@illsv</a></div>
+      <div style="display: flex; flex-direction: column; gap: 2px;"><span class="mono">LinkedIn</span><a href="https://linkedin.com/in/illia-losiev" style="font-size: 15px;">Illia Losiev</a></div>
+    </div>
+    <p class="mono" style="text-transform: none; letter-spacing: 0.02em; padding-top: 24px; border-top: 1px solid #322e26;">Architecture · Engineering · Delivery · Ownership</p>
+  </section>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#d9764f","options":["#d9764f","#4f9a7c","#6f86c8","#ede8dc"],"section":"Theme"},"$preview":{"width":390,"height":4600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#d9764f' };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,12 +1,71 @@
 {
   "artboards": [
-    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 11200, "title": "illsv.com — desktop" },
-    { "file": "Mobile.dc.html", "x": 1540, "y": 0, "w": 390, "h": 4600, "title": "illsv.com — iPhone" },
-    { "file": "DirectionB.dc.html", "x": 2040, "y": 0, "w": 720, "h": 560, "title": "Direction B — Ink monograph (low-fi)" },
-    { "file": "DirectionC.dc.html", "x": 2040, "y": 720, "w": 720, "h": 560, "title": "Direction C — Swiss technical (low-fi)" }
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 11200,
+      "title": "illsv.com — desktop"
+    },
+    {
+      "file": "Mobile.dc.html",
+      "x": 1540,
+      "y": 0,
+      "w": 390,
+      "h": 4600,
+      "title": "illsv.com — iPhone"
+    },
+    {
+      "file": "DirectionB.dc.html",
+      "x": 2040,
+      "y": 0,
+      "w": 720,
+      "h": 560,
+      "title": "Direction B — Ink monograph (low-fi)"
+    },
+    {
+      "file": "DirectionC.dc.html",
+      "x": 2040,
+      "y": 720,
+      "w": 720,
+      "h": 560,
+      "title": "Direction C — Swiss technical (low-fi)"
+    },
+    {
+      "file": "Dark.dc.html",
+      "x": 2900,
+      "y": 0,
+      "w": 1440,
+      "h": 11200,
+      "title": "illsv.com — desktop, dark"
+    },
+    {
+      "file": "DarkMobile.dc.html",
+      "x": 4440,
+      "y": 0,
+      "w": 390,
+      "h": 4600,
+      "title": "illsv.com — iPhone, dark"
+    }
   ],
   "annotations": [
-    { "id": "brief-note", "x": 2040, "y": 1420, "w": 720, "text": "Main direction: warm editorial — Instrument Serif + IBM Plex Sans/Mono, paper ground, ink, one oxide accent (tweakable).\n\nGrey [bracketed] text marks facts I did not have: company names, dates, metrics, projects 2–3, case studies 2–3, roles 2–3, personal projects. The AI Agent Platform story is drafted from the brief; results are placeholders.\n\nB and C are low-fi alternates for the hero only — pick one or keep Main." }
+    {
+      "id": "brief-note",
+      "x": 2040,
+      "y": 1420,
+      "w": 720,
+      "text": "Main direction: warm editorial — Instrument Serif + IBM Plex Sans/Mono, paper ground, ink, one oxide accent (tweakable).\n\nGrey [bracketed] text marks facts I did not have: company names, dates, metrics, projects 2–3, case studies 2–3, roles 2–3, personal projects. The AI Agent Platform story is drafted from the brief; results are placeholders.\n\nB and C are low-fi alternates for the hero only — pick one or keep Main."
+    },
+    {
+      "id": "dark-note",
+      "x": 4920,
+      "y": 0,
+      "w": 360,
+      "text": "Dark theme — same warm family, inverted: ground #161410, cream ink #ede8dc, oxide accent lifted to #d9764f so it passes contrast on dark; button text goes dark on the accent.\n\nThe ink blocks (principles, case result, mobile emphasis row) become raised warm-charcoal panels (#211e18) instead of cream slabs — less glare at night. Tell me if you'd rather keep them as inverted cream blocks.\n\nOn the site the theme follows the system setting (prefers-color-scheme), no JS and no toggle."
+    }
   ],
-  "launch": { "view": "canvas" }
+  "launch": {
+    "view": "canvas"
+  }
 }

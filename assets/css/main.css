@@ -7,22 +7,59 @@
 @font-face { font-family: "IBM Plex Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url(/fonts/ibm-plex-mono-500.woff2) format("woff2"); }
 
 :root {
+  color-scheme: light;
   --paper: #f4f1ea;
   --paper-2: #f9f7f2;
   --paper-3: #ece8df;
+  --portrait-bg: #dcd6c8;
   --ink: #17150f;
   --ink-2: #3a372f;
   --muted: #6b665c;
   --dim: #8c8578;
   --rule: #d8d2c5;
+  --rule-strong: var(--rule-strong);
+  --rule-soft: var(--rule-soft);
   --rule-ink: #3b372e;
   --accent: #b3512e;
+  --on-accent: #f4f1ea;
+  /* Ink blocks: the principles band, the case result, code, the chosen option. */
+  --block-bg: #17150f;
+  --block-fg: #f4f1ea;
+  --block-muted: var(--block-muted);
+  --block-dim: var(--block-dim);
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
   --wrap: 1248px;
   --gutter: 96px;
   --section-y: 96px;
+}
+
+/* Dark: same warm family, inverted. Follows the system setting; no toggle, no JS.
+   Ink blocks become raised warm-charcoal panels rather than cream slabs. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --paper: #161410;
+    --paper-2: #1d1b16;
+    --paper-3: #2a2720;
+    --portrait-bg: #2a2720;
+    --ink: #ede8dc;
+    --ink-2: #cbc4b5;
+    --muted: #9a937f;
+    --dim: #857d6e;
+    --rule: #322e26;
+    --rule-strong: #4a4438;
+    --rule-soft: #3a352c;
+    --rule-ink: #3d382e;
+    --accent: #d9764f;
+    --on-accent: #161410;
+    --block-bg: #211e18;
+    --block-fg: #ede8dc;
+    --block-muted: #9a937f;
+    --block-dim: #b0a996;
+  }
+  .portrait img { filter: grayscale(1) contrast(1.05) brightness(0.88); }
 }
 
 * { box-sizing: border-box; }
@@ -55,11 +92,11 @@ img, svg { max-width: 100%; height: auto; }
 .lede { font-size: 22px; line-height: 1.5; color: var(--ink-2); }
 .lede--sm { font-size: 20px; }
 .ph { color: var(--dim); background: var(--paper-3); padding: 0 4px; border-radius: 2px; }
-.textlink { font-size: 14px; border-bottom: 1px solid #b8b1a3; padding-bottom: 2px; align-self: flex-start; }
+.textlink { font-size: 14px; border-bottom: 1px solid var(--rule-strong); padding-bottom: 2px; align-self: flex-start; }
 .textlink:hover { border-color: var(--accent); }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 26px; font-size: 15px; font-weight: 500; letter-spacing: 0.01em; border-radius: 2px; border: 1px solid var(--ink); transition: background 160ms ease, color 160ms ease, border-color 160ms ease; }
-.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .btn-primary:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .btn-ghost { background: transparent; color: var(--ink); }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
@@ -84,7 +121,7 @@ img, svg { max-width: 100%; height: auto; }
 .hero-aside { grid-column: span 4; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
 .hero-aside > p { width: 300px; }
 .hero-aside > .mono { margin-top: 10px; }
-.portrait { width: 300px; height: 380px; background: #dcd6c8; clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%); display: flex; align-items: flex-end; padding: 16px; overflow: hidden; }
+.portrait { width: 300px; height: 380px; background: var(--portrait-bg); clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%); display: flex; align-items: flex-end; padding: 16px; overflow: hidden; }
 .portrait img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); margin: -16px; }
 
 /* Strip */
@@ -99,13 +136,13 @@ img, svg { max-width: 100%; height: auto; }
 .section-head .small { padding-top: 8px; }
 .section-body { grid-column: span 9; display: flex; flex-direction: column; gap: 40px; }
 .section-body--narrow { grid-column: span 6; }
-.section--ink { background: var(--ink); color: var(--paper); }
-.section--ink .mono { color: #a9a294; }
+.section--ink { background: var(--block-bg); color: var(--block-fg); }
+.section--ink .mono { color: var(--block-muted); }
 .more-list { display: flex; flex-direction: column; gap: 6px; padding-top: 16px; }
 
 /* Narrative */
 .narrative { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; position: relative; padding-top: 24px; }
-.narrative::before { content: ""; position: absolute; left: 0; right: 0; top: 40px; border-top: 1px solid #c9c2b3; }
+.narrative::before { content: ""; position: absolute; left: 0; right: 0; top: 40px; border-top: 1px solid var(--rule-soft); }
 .narrative li { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; position: relative; }
 .narrative-num { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1.25px solid var(--ink); background: var(--paper); color: var(--ink); letter-spacing: 0; font-size: 11px; }
 .narrative li.is-emphasis .narrative-num { background: var(--ink); color: var(--paper); }
@@ -213,10 +250,10 @@ a.card:hover { border-color: var(--ink); color: inherit; }
 .prose p, .prose li { font-size: 18px; }
 .prose li { list-style: disc; margin-left: 1.2em; }
 .prose ol li { list-style: decimal; }
-.prose a { border-bottom: 1px solid #b8b1a3; }
+.prose a { border-bottom: 1px solid var(--rule-strong); }
 .prose a:hover { border-color: var(--accent); }
 .prose blockquote { margin: 0; padding-left: 24px; border-left: 2px solid var(--ink); font-family: var(--serif); font-size: 24px; line-height: 1.3; }
-.prose pre { background: var(--ink); color: var(--paper); padding: 20px 24px; overflow-x: auto; font-size: 14px; line-height: 1.55; border-radius: 2px; }
+.prose pre { background: var(--block-bg); color: var(--block-fg); padding: 20px 24px; overflow-x: auto; font-size: 14px; line-height: 1.55; border-radius: 2px; }
 .prose code { font-family: var(--mono); font-size: 0.92em; }
 .prose :not(pre) > code { background: var(--paper-3); padding: 1px 5px; border-radius: 2px; }
 .prose img { display: block; }
@@ -228,8 +265,8 @@ a.card:hover { border-color: var(--ink); color: inherit; }
 .option:last-child { border-right: 0; }
 .option .mono { color: var(--ink); }
 .option p:not(.mono) { font-size: 15px !important; }
-.option--chosen { background: var(--ink); color: var(--paper); }
-.option--chosen .mono { color: var(--paper); }
+.option--chosen { background: var(--block-bg); color: var(--block-fg); }
+.option--chosen .mono { color: var(--block-fg); }
 .result { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; padding: 32px; border: 1px solid var(--ink); }
 .result > div { display: flex; flex-direction: column; gap: 12px; }
 
@@ -240,9 +277,9 @@ a.card:hover { border-color: var(--ink); color: inherit; }
 .diagram text { fill: var(--ink); }
 .diagram .dim { fill: var(--muted); }
 .diagram .inv { fill: var(--paper); }
-.diagram .inv.dim { fill: #cfc8b8; }
+.diagram .inv.dim { fill: var(--block-dim); }
 .diagram .edge { stroke: var(--ink); stroke-width: 1.25; fill: none; }
-.diagram .edge--faint { stroke: #c9c2b3; stroke-width: 1; }
+.diagram .edge--faint { stroke: var(--rule-soft); stroke-width: 1; }
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1100px) {
@@ -302,9 +339,9 @@ a.card:hover { border-color: var(--ink); color: inherit; }
   .narrative-num { width: auto; height: auto; border: 0; border-radius: 0; background: transparent; color: var(--muted); grid-row: span 2; justify-content: flex-start; font-size: 11px; letter-spacing: 0.08em; }
   .narrative-label { font-family: var(--sans); font-size: 16px; font-weight: 500; letter-spacing: 0; text-transform: none; padding-top: 0; }
   .narrative-text { max-width: none; font-size: 14px; }
-  .narrative li.is-emphasis { background: var(--ink); color: var(--paper); margin: 0 calc(-1 * var(--gutter)); padding-left: var(--gutter); padding-right: var(--gutter); }
-  .narrative li.is-emphasis .narrative-num { background: transparent; color: #a9a294; }
-  .narrative li.is-emphasis .narrative-text { color: #cfc8b8; }
+  .narrative li.is-emphasis { background: var(--block-bg); color: var(--block-fg); margin: 0 calc(-1 * var(--gutter)); padding-left: var(--gutter); padding-right: var(--gutter); }
+  .narrative li.is-emphasis .narrative-num { background: transparent; color: var(--block-muted); }
+  .narrative li.is-emphasis .narrative-text { color: var(--block-dim); }
 
   .work-entry { gap: 16px; padding: 40px 0; }
   .work-title { font-size: 28px; }
