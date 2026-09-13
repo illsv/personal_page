@@ -1,14 +1,22 @@
-{{- /* One Selected Work entry as a mini case study. */ -}}
-<article class="work-entry">
+{{- /* One Selected Work entry as a mini case study.
+     Called with (dict "page" . "compact" true): compact shows Problem + Outcome only
+     and links to the full record on /work/. */ -}}
+{{- $p := .page -}}
+{{- $compact := .compact -}}
+{{- $fields := cond $compact (slice "problem" "outcome") (slice "context" "problem" "role" "decisions" "engineering" "outcome") -}}
+<article class="work-entry" id="{{ $p.File.ContentBaseName }}">
   <div class="work-head">
-    <h3 class="work-title">{{ if .Params.caseStudy }}<a href="{{ .Params.caseStudy }}">{{ partial "ph.html" .Title }}</a>{{ else }}{{ partial "ph.html" .Title }}{{ end }}</h3>
-    <span class="mono">{{ partial "ph.html" (printf "%s · %s" .Params.company .Params.period) }}</span>
+    <h3 class="work-title">{{ if $p.Params.caseStudy }}<a href="{{ $p.Params.caseStudy }}">{{ partial "ph.html" $p.Title }}</a>{{ else }}{{ partial "ph.html" $p.Title }}{{ end }}</h3>
+    <span class="mono">{{ partial "ph.html" (printf "%s · %s" $p.Params.company $p.Params.period) }}</span>
   </div>
-  <p class="lede lede--sm">{{ partial "ph.html" .Params.summary }}</p>
+  <p class="lede lede--sm">{{ partial "ph.html" $p.Params.summary }}</p>
   <dl class="fields">
-    {{ range $k := slice "context" "problem" "role" "decisions" "engineering" "outcome" }}{{ with index $.Params $k }}
+    {{ range $k := $fields }}{{ with index $p.Params $k }}
     <div class="field"><dt>{{ $k }}</dt><dd>{{ partial "ph.html" . }}</dd></div>{{ end }}{{ end }}
   </dl>
-  <p class="mono tech-line">{{ partial "ph.html" .Params.technologies }}</p>
-  {{ with .Params.caseStudy }}<a class="textlink" href="{{ . }}">Read the case study →</a>{{ end }}
+  <p class="mono tech-line">{{ partial "ph.html" $p.Params.technologies }}</p>
+  <div class="work-links">
+    {{ if $compact }}<a class="textlink" href="/work/#{{ $p.File.ContentBaseName }}">Full record →</a>{{ end }}
+    {{ with $p.Params.caseStudy }}<a class="textlink" href="{{ . }}">Read the case study →</a>{{ end }}
+  </div>
 </article>

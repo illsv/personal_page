@@ -161,6 +161,10 @@ img, svg { max-width: 100%; height: auto; }
 .fields--tight .field { grid-template-columns: 110px minmax(0, 1fr); }
 .field dt { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 4px; }
 .tech-line { color: var(--dim); }
+.work-links { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.work-links:empty { display: none; }
+.section-head a { border-bottom: 1px solid var(--rule-strong); }
+.section-head a:hover { border-color: var(--accent); }
 
 /* Case study teaser */
 .case-teaser-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; }

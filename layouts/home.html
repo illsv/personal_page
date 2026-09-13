@@ -55,10 +55,10 @@
     <div class="section-head">
       <p class="mono">02 — Selected work</p>
       <h2>Systems I have built and owned</h2>
-      <p class="small muted">Each entry is a short case study: context, problem, role, decisions, outcome. Technology comes last.</p>
+      <p class="small muted">The problem and the outcome of each system; the full record — context, role, decisions, engineering — is on the <a href="/work/">work page</a>.</p>
     </div>
     <div class="section-body">
-      {{ range (where site.RegularPages "Section" "work").ByWeight }}{{ partial "work-entry.html" . }}{{ end }}
+      {{ range (where site.RegularPages "Section" "work").ByWeight }}{{ partial "work-entry.html" (dict "page" . "compact" true) }}{{ end }}
     </div>
   </div>
 </section>

@@ -6,7 +6,7 @@
     <p class="lede">Each entry is a short case study: context, problem, role, decisions, outcome. Technology comes last.</p>
   </header>
   <div class="work-list">
-    {{ range .Pages.ByWeight }}{{ partial "work-entry.html" . }}{{ end }}
+    {{ range .Pages.ByWeight }}{{ partial "work-entry.html" (dict "page" .) }}{{ end }}
   </div>
 </section>
 {{ partial "contact.html" . }}
