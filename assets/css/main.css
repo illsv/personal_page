@@ -112,13 +112,13 @@ img, svg { max-width: 100%; height: auto; }
 
 /* Hero */
 .hero { padding-top: 72px; padding-bottom: 96px; }
-.hero-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; align-items: end; }
+.hero-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; align-items: start; }
 .hero-copy { grid-column: span 8; display: flex; flex-direction: column; gap: 32px; }
 .hero-title { font-size: clamp(48px, 5.4vw, 76px); line-height: 1.04; }
 .hero-lede { max-width: 640px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding-top: 8px; }
 .hero-actions .textlink { margin-left: 12px; }
-.hero-aside { grid-column: span 4; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+.hero-aside { grid-column: span 4; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; padding-top: 50px; } /* kicker line (18px) + copy gap (32px): the portrait tops out with the headline */
 .hero-aside > p { width: 300px; }
 .hero-aside > .mono { margin-top: 10px; }
 .portrait { width: 300px; height: 380px; background: var(--portrait-bg); clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%); display: flex; align-items: flex-end; padding: 16px; overflow: hidden; }
